@@ -6,7 +6,7 @@ const FormPage = ({ isFormPage, setIsFormPage }) => {
    return (
       <>
          {isFormPage ? (
-            <div className="bg-white shadow-md w-[92%] h-full absolute top-0 mx-8 ">
+            <div className="bg-white shadow-md w-[92%] h-full absolute top-0 mx-8 p-8 ">
                <section
                   className="absolute right-2 top-2 px-4 py-2 cursor-pointer"
                   onClick={() => setIsFormPage(!isFormPage)}

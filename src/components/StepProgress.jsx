@@ -8,14 +8,15 @@ const StepProgress = () => {
    };
 
    return (
-      <section className="flex justify-start items-start flex-col">
-         <div className="flex justify-center items-center mb-4">
+      <section className="flex justify-start items-start flex-col relative w-full">
+         <div className="h-0.5 bg-slate-200 w-[10rem] top-4 left-2 absolute"></div>
+         <div className="flex justify-center items-center absolute mb-4">
             <StepNumberIndicator step={1} activeStep={activeStep} onClick={handleClick} />
             <StepNumberIndicator step={2} activeStep={activeStep} onClick={handleClick} />
             <StepNumberIndicator step={3} activeStep={activeStep} onClick={handleClick} />
             <StepNumberIndicator step={4} activeStep={activeStep} onClick={handleClick} />
          </div>
-         <div className="mt-2 text-slate-500 text-sm">
+         <div className="mt-14 text-slate-500 text-sm">
             <StepParagraph activeStep={activeStep} />
          </div>
       </section>
