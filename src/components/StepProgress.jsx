@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ServiceDetails from "./steps/ServiceDetails";
 
 const StepProgress = () => {
    const [activeStep, setActiveStep] = useState(1);
@@ -18,6 +19,9 @@ const StepProgress = () => {
          </div>
          <div className="mt-14 text-slate-500 text-sm">
             <StepParagraph activeStep={activeStep} />
+         </div>
+         <div className="mt-8">
+            <ServiceDetails />
          </div>
       </section>
    );
