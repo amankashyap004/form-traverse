@@ -50,18 +50,19 @@ const MultiSelectDropdown = ({ options, onChange }) => {
             </div>
          </div>
          {dropdownOpen && (
-            <div className="absolute z-10 px-2 py-1 bg-white border border-slate-400 rounded-md shadow w-full">
+            <div className="absolute z-10 px-2 py-1 bg-white border border-slate-400 rounded-md shadow w-full max-h-48 overflow-y-auto">
                {options.map((option) => (
                   <div
                      key={option.value}
-                     className={`p-1 hover:text-blue-500 rounded-md cursor-pointer ${
+                     className={`flex justify-between items-center pl-2 pr-4 py-1 font-medium text-base hover:text-blue-500 cursor-pointer w-full ${
                         selectedOptions.some(
                            (selectedOption) => selectedOption.value === option.value
                         ) && "text-blue-500"
                      }`}
                      onClick={() => handleOptionClick(option)}
                   >
-                     {option.label}
+                     <span>{option.label}</span>
+                     <span>{option.price}</span>
                   </div>
                ))}
             </div>
