@@ -30,7 +30,7 @@ const MultiSelectDropdown = ({ options, onChange }) => {
    return (
       <div className="relative w-full">
          <div
-            className="border border-slate-400 rounded-md cursor-pointer w-full flex items-center justify-between pr-4 flex-wrap"
+            className="border border-slate-400 rounded-md cursor-pointer w-full flex items-center justify-between flex-wrap"
             onClick={toggleDropdown}
          >
             <div className="p-2 flex justify-start items-start flex-wrap">
@@ -50,7 +50,9 @@ const MultiSelectDropdown = ({ options, onChange }) => {
                )}
             </div>
             <div
-               className={`ml-4 transform transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
+               className={`transform transition-transform ${
+                  dropdownOpen ? "rotate-180" : ""
+               } absolute top-4 right-4`}
             >
                <ExpandMoreIcon />
             </div>
