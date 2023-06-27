@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const MultiSelectDropdown = ({ options, onChange }) => {
    const [selectedOptions, setSelectedOptions] = useState([]);
@@ -29,7 +30,7 @@ const MultiSelectDropdown = ({ options, onChange }) => {
    return (
       <div className="relative w-full">
          <div
-            className="border border-slate-400 rounded-md cursor-pointer w-full flex justify-start items-start flex-wrap"
+            className="border border-slate-400 rounded-md cursor-pointer w-full flex items-center justify-between pr-4 flex-wrap"
             onClick={toggleDropdown}
          >
             <div className="p-2 flex justify-start items-start flex-wrap">
@@ -47,6 +48,11 @@ const MultiSelectDropdown = ({ options, onChange }) => {
                ) : (
                   <div className="p-1 text-gray-500">Select options</div>
                )}
+            </div>
+            <div
+               className={`ml-4 transform transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
+            >
+               <ExpandMoreIcon />
             </div>
          </div>
          {dropdownOpen && (
