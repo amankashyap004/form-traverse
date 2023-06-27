@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const CustomDropdown = ({ options, onChange }) => {
    const [selectedOption, setSelectedOption] = useState(null);
@@ -22,7 +23,7 @@ const CustomDropdown = ({ options, onChange }) => {
             <div
                className={`ml-4 transform transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
             >
-               !
+               <ExpandMoreIcon />
             </div>
          </div>
          {dropdownOpen && (

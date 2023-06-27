@@ -13,7 +13,7 @@ const FormPage = ({ isFormPage, setIsFormPage }) => {
                >
                   <CloseIcon style={{ fontSize: "30px" }} />
                </section>
-               <section className="ml-12 mt-8 absolute">
+               <section className="ml-12 mt-8 absolute w-1/2">
                   <StepProgress />
                </section>
             </div>

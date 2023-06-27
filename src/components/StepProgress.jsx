@@ -20,7 +20,7 @@ const StepProgress = () => {
          <div className="mt-14 text-slate-500 text-sm">
             <StepParagraph activeStep={activeStep} />
          </div>
-         <div className="mt-4">
+         <div className="mt-4 w-full">
             <ServiceDetails />
          </div>
       </section>
