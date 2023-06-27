@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import CustomDropdown from "../CustomDropdown";
 
 const ServiceDetails = () => {
-   const handleDropdownChange = (e) => {
-      console.log("Selected value:", e.label);
+   const [selectedOptionLabel, setSelectedOptionLabel] = useState("");
+
+   const handleDropdownChange = (option) => {
+      setSelectedOptionLabel(option.label);
    };
+
+   useEffect(() => {
+      setSelectedOptionLabel(dropdownOptions[0].label);
+   }, []);
 
    const dropdownOptions = [
       {
@@ -25,6 +31,7 @@ const ServiceDetails = () => {
          </h3>
          <form>
             <CustomDropdown options={dropdownOptions} onChange={handleDropdownChange} />
+            <p>Selected Option: {selectedOptionLabel}</p>
          </form>
       </section>
    );
