@@ -1,6 +1,6 @@
 import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
-import StepProgress from "../components/StepProgress";
+import FormPageContain from "../components/FormPageContain";
 
 const FormPage = ({ isFormPage, setIsFormPage }) => {
    return (
@@ -14,7 +14,7 @@ const FormPage = ({ isFormPage, setIsFormPage }) => {
                   <CloseIcon style={{ fontSize: "30px" }} />
                </section>
                <section className="ml-12 mt-8 absolute w-1/2">
-                  <StepProgress />
+                  <FormPageContain />
                </section>
             </div>
          ) : (
