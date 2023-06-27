@@ -3,13 +3,18 @@ import CustomDropdown from "../CustomDropdown";
 
 const ServiceDetails = () => {
    const handleDropdownChange = (e) => {
-      console.log("Selected value:", e.value);
+      console.log("Selected value:", e.label);
    };
 
    const dropdownOptions = [
-      { value: "option1", label: "Option 1" },
-      { value: "option2", label: "Option 2" },
-      { value: "option3", label: "Option 3" },
+      {
+         value: "option1",
+         label: "Deep Cleaning (for homes that have not been cleaned in 3+ weeks)",
+      },
+      { value: "option2", label: "Regular Cleaning (for homes cleaned in last 3 weeks)" },
+      { value: "option3", label: "Moving Cleanup (to clean home for new tenants)" },
+      { value: "option4", label: "Post Construction Cleaning" },
+      { value: "option5", label: "Vacation Rental Cleaning" },
    ];
 
    return (
