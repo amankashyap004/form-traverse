@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const CustomDropdown = ({ options, onChange }) => {
-   const [selectedOption, setSelectedOption] = useState(null);
+   const [selectedOption, setSelectedOption] = useState(options[0]);
    const [dropdownOpen, setDropdownOpen] = useState(false);
 
    const handleOptionClick = (option) => {
@@ -17,9 +17,7 @@ const CustomDropdown = ({ options, onChange }) => {
             className="flex items-center justify-between px-4 py-3 bg-white border border-gray-300 rounded-md cursor-pointer w-full"
             onClick={() => setDropdownOpen(!dropdownOpen)}
          >
-            <span className="truncate">
-               {selectedOption ? selectedOption.label : "Choose an option"}
-            </span>
+            <span className="truncate">{selectedOption ? selectedOption.label : ""}</span>
             <div
                className={`ml-4 transform transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
             >
