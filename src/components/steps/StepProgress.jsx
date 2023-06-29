@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ServiceDetails from "./steps/ServiceDetails";
+import ServiceDetails from "./ServiceDetails";
 
 const StepProgress = () => {
    const [activeStep, setActiveStep] = useState(1);
