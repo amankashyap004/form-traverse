@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import CustomDropdown from "../CustomDropdown";
 import MultiSelectDropdown from "../MultiSelectDropdown";
+import { setMultiOptions } from "../../store/actions/actions";
 
 const ServiceDetails = () => {
+   const dispatch = useDispatch();
    const [selectedOptionLabel, setSelectedOptionLabel] = useState("");
 
    const handleDropdownChange = (option) => {
@@ -26,8 +29,9 @@ const ServiceDetails = () => {
 
    const [selectedMultiOptions, setSelectedMultiOptions] = useState([]);
 
-   const handleSelectedOptionsChange = (selectedOptions) => {
-      setSelectedMultiOptions(selectedOptions);
+   const handleSelectedOptionsChange = (selectedMultiOptions) => {
+      setSelectedMultiOptions(selectedMultiOptions);
+      dispatch(setMultiOptions(selectedMultiOptions));
    };
 
    const dropdownMultiSelectOptions = [
@@ -63,19 +67,6 @@ const ServiceDetails = () => {
                   options={dropdownMultiSelectOptions}
                   onChange={handleSelectedOptionsChange}
                />
-               {selectedMultiOptions.length > 0 && (
-                  <div className="flex justify-start items-center flex-col max-h-48 overflow-y-auto my-2 p-2">
-                     {selectedMultiOptions.map((option) => (
-                        <div
-                           key={option.value}
-                           className="flex justify-between items-center w-full my-1"
-                        >
-                           <span>{option.label}</span>
-                           <span className="font-black">{option.price}</span>
-                        </div>
-                     ))}
-                  </div>
-               )}
             </div>
          </form>
       </section>

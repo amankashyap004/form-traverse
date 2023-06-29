@@ -1,4 +1,5 @@
 import React from "react";
+import SelectedMultiOptions from "./steps/SelectedMultiOptions";
 
 const BookingSummary = () => {
    return (
@@ -7,6 +8,9 @@ const BookingSummary = () => {
             Booking summary
          </h1>
          <div className="py-4">Booking summary contain</div>
+         <div>
+            <SelectedMultiOptions />
+         </div>
       </section>
    );
 };
