@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CustomDropdown from "../CustomDropdown";
 import MultiSelectDropdown from "../MultiSelectDropdown";
-import { setMultiOptions } from "../../store/actions/actions";
+import { setMultiOptions, setSelectedOptionLabel } from "../../store/actions/actions";
+import { getSelectedOptionLabel } from "../../store/selectors/selectors";
 
 const dropdownOptions = [
    {
@@ -35,14 +36,14 @@ const dropdownMultiSelectOptions = [
 const ServiceDetails = () => {
    const dispatch = useDispatch();
 
-   const [selectedOptionLabel, setSelectedOptionLabel] = useState("");
+   const selectedOptionLabel = useSelector(getSelectedOptionLabel);
 
    const handleDropdownChange = (option) => {
-      setSelectedOptionLabel(option.label);
+      dispatch(setSelectedOptionLabel(option.label));
    };
 
    useEffect(() => {
-      setSelectedOptionLabel(dropdownOptions[0].label);
+      dispatch(setSelectedOptionLabel(dropdownOptions[0].label));
    }, []);
 
    const [selectedMultiOptions, setSelectedMultiOptions] = useState([]);
@@ -61,7 +62,6 @@ const ServiceDetails = () => {
          <form>
             <div className="mb-4">
                <CustomDropdown options={dropdownOptions} onChange={handleDropdownChange} />
-               <p>Selected Option: {selectedOptionLabel}</p>
             </div>
             <div className="mb-4">
                <MultiSelectDropdown

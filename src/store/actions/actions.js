@@ -4,3 +4,10 @@ export const setMultiOptions = (multiOptions) => {
       payload: multiOptions,
    };
 };
+
+export const setSelectedOptionLabel = (selectedOptionLabel) => {
+   return {
+      type: "SET_SELECTED_OPTION_LABEL",
+      payload: selectedOptionLabel,
+   };
+};

@@ -1,5 +1,6 @@
 const initialState = {
    selectedMultiOptions: [],
+   selectedOptionLabel: "",
 };
 
 const reducer = (state = initialState, action) => {
@@ -8,6 +9,11 @@ const reducer = (state = initialState, action) => {
          return {
             ...state,
             selectedMultiOptions: action.payload,
+         };
+      case "SET_SELECTED_OPTION_LABEL":
+         return {
+            ...state,
+            selectedOptionLabel: action.payload,
          };
       default:
          return state;
