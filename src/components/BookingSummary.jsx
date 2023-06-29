@@ -8,7 +8,7 @@ const BookingSummary = () => {
             Booking summary
          </h1>
          <div className="py-4">Booking summary contain</div>
-         <div>
+         <div className="pb-4 w-full">
             <SelectedMultiOptions />
          </div>
       </section>
