@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import CloseIcon from "@mui/icons-material/Close";
+import DoneIcon from "@mui/icons-material/Done";
 
 const MultiSelectDropdown = ({ options, onChange }) => {
    const [selectedOptions, setSelectedOptions] = useState([]);
@@ -41,7 +43,9 @@ const MultiSelectDropdown = ({ options, onChange }) => {
                         className="flex justify-center items-center px-2 py-1 m-1 bg-blue-800 text-white rounded-md"
                         onClick={() => handleOptionClick(option)}
                      >
-                        <span className="font-bold text-lg cursor-pointer ml-2 mr-3">&times;</span>
+                        <span className="flex justify-center items-center font-bold cursor-pointer mx-2">
+                           <CloseIcon fontSize="small" />
+                        </span>
                         <span>{option.label}</span>
                      </div>
                   ))
@@ -70,7 +74,16 @@ const MultiSelectDropdown = ({ options, onChange }) => {
                      onClick={() => handleOptionClick(option)}
                   >
                      <span>{option.label}</span>
-                     <span>{option.price}</span>
+                     <div className="flex justify-between items-center font-extrabold">
+                        <span className="mr-1">{option.price}</span>
+                        {selectedOptions.some(
+                           (selectedOption) => selectedOption.value === option.value
+                        ) ? (
+                           <DoneIcon />
+                        ) : (
+                           ""
+                        )}
+                     </div>
                   </div>
                ))}
             </div>
