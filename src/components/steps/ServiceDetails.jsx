@@ -24,6 +24,12 @@ const ServiceDetails = () => {
       { value: "option5", label: "Vacation Rental Cleaning" },
    ];
 
+   const [selectedMultiOptions, setSelectedMultiOptions] = useState([]);
+
+   const handleSelectedOptionsChange = (selectedOptions) => {
+      setSelectedMultiOptions(selectedOptions);
+   };
+
    const dropdownMultiSelectOptions = [
       { value: "option1", label: "Miami Area Service", price: "$60" },
       { value: "option2", label: "Los Angeles Service", price: "$50" },
@@ -53,7 +59,23 @@ const ServiceDetails = () => {
                <p>Selected Option: {selectedOptionLabel}</p>
             </div>
             <div className="mb-4">
-               <MultiSelectDropdown options={dropdownMultiSelectOptions} />
+               <MultiSelectDropdown
+                  options={dropdownMultiSelectOptions}
+                  onChange={handleSelectedOptionsChange}
+               />
+               {selectedMultiOptions.length > 0 && (
+                  <div className="flex justify-start items-center flex-col max-h-48 overflow-y-auto my-2 p-2">
+                     {selectedMultiOptions.map((option) => (
+                        <div
+                           key={option.value}
+                           className="flex justify-between items-center w-full my-1"
+                        >
+                           <span>{option.label}</span>
+                           <span className="font-black">{option.price}</span>
+                        </div>
+                     ))}
+                  </div>
+               )}
             </div>
          </form>
       </section>
