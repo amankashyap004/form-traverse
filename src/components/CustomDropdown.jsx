@@ -31,7 +31,7 @@ const CustomDropdown = ({ options, defaultValue, onChange }) => {
             </div>
          </div>
          {dropdownOpen && (
-            <div className="absolute z-10 px-4 py-3 overflow-y-auto bg-white border border-gray-300 rounded-md shadow w-full ">
+            <div className="absolute z-10 px-4 py-3 bg-white border border-gray-300 rounded-md shadow w-full max-h-60 overflow-y-auto">
                {options.map((option) => (
                   <div
                      key={option.value}
