@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CustomDropdown from "../CustomDropdown";
+import CustomDatePicker from "../CustomDatePicker";
 import {
    setSelectedTimingData,
    setSelectedServiceFrequencyData,
@@ -11,6 +12,10 @@ const ExtraServiceDetails = () => {
    const dispatch = useDispatch();
    const timingData = data.timingData;
    const serviceFrequencyData = data.serviceFrequencyData;
+
+   const handleDateSelect = (date) => {
+      console.log(date); // Print the selected date value
+   };
 
    const handleDropdownChangeTiming = (option) => {
       dispatch(setSelectedTimingData(option.label));
@@ -23,7 +28,9 @@ const ExtraServiceDetails = () => {
    return (
       <section className="flex justify-center items-center w-full">
          {/* Date */}
-         <div className="mb-4 w-1/3 mr-3"></div>
+         <div className="mb-4 w-1/3 mr-3">
+            <CustomDatePicker onDateSelect={handleDateSelect} />
+         </div>
          {/* Timing */}
          <div className="mb-4 w-1/3 mr-3">
             <CustomDropdown
