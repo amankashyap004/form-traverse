@@ -2,20 +2,12 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CustomDropdown from "../CustomDropdown";
 import { setSelectedTimingData } from "../../store/actions/actions";
-
-const timingData = [
-   {
-      value: "option1",
-      label: "09:00 AM",
-   },
-   {
-      value: "option2",
-      label: "10:00 AM",
-   },
-];
+import data from "../../data.json";
 
 const ExtraServiceDetails = () => {
    const dispatch = useDispatch();
+   const timingData = data.timingData;
+
    const handleDropdownChange = (option) => {
       dispatch(setSelectedTimingData(option.label));
    };

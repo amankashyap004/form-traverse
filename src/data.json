@@ -116,5 +116,47 @@
          "label": "**Weekend Service**",
          "price": "$50"
       }
+   ],
+   "timingData": [
+      {
+         "value": "option1",
+         "label": "09:00 AM"
+      },
+      {
+         "value": "option2",
+         "label": "10:00 AM"
+      },
+      {
+         "value": "option3",
+         "label": "11:00 AM"
+      },
+      {
+         "value": "option4",
+         "label": "12:00 AM"
+      },
+      {
+         "value": "option5",
+         "label": "01:00 PM"
+      },
+      {
+         "value": "option6",
+         "label": "02:00 PM"
+      },
+      {
+         "value": "option7",
+         "label": "03:00 PM"
+      },
+      {
+         "value": "option8",
+         "label": "04:00 PM"
+      },
+      {
+         "value": "option9",
+         "label": "05:00 PM"
+      },
+      {
+         "value": "option10",
+         "label": "06:00 PM"
+      }
    ]
 }
