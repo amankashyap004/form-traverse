@@ -25,23 +25,44 @@
       {
          "key": "1",
          "icon": "",
-         "title": "1be / 1ba",
+         "title": "1bd / 1ba",
          "paragraph": "< 1000 sq. ft.",
          "label": "La Petite - 1 to 2 Bedroom Condo (under 1000 sq. ft.)"
       },
       {
          "key": "2",
          "icon": "",
-         "title": "2be / 2ba",
+         "title": "2bd / 2ba",
          "paragraph": "> 1000 sq. ft.",
          "label": "La Petite II - 2 Bedroom 2 Bath Home/Condo (1001-1500 sq. ft.)"
       },
       {
          "key": "3",
          "icon": "",
-         "title": "3be / 2ba",
+         "title": "3bd / 2ba",
          "paragraph": "< 1800 sq. ft.",
          "label": "Le Milieu - 3 Bedroom 2 Bath Home (under 1800 sq. ft.)"
+      },
+      {
+         "key": "4",
+         "icon": "",
+         "title": "4bd / 2ba",
+         "paragraph": "> 1800 sq. ft.",
+         "label": "Le Milieu - 4 Bedroom 2 Bath Home (under 1800 sq. ft.)"
+      },
+      {
+         "key": "5",
+         "icon": "",
+         "title": "5bd / 2ba",
+         "paragraph": "< 2250 sq. ft.",
+         "label": "Grand - 5 Bedroom 2 Bath Home (under 2250 sq. ft.)"
+      },
+      {
+         "key": "6",
+         "icon": "",
+         "title": "6bd / 2ba",
+         "paragraph": "> 2250 sq. ft.",
+         "label": "Très Grand - 6 Bedroom 2 Bath Home (under 3000 sq. ft.)"
       }
    ],
    "dropdownMultiSelectOptions": [
