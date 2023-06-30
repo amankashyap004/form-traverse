@@ -35,9 +35,9 @@ const BookingSummary = () => {
             <div className="flex justify-start items-center py-1">
                <CalendarMonthIcon sx={{ fontSize: 35 }} />
                <p className="ml-2 text-base font-semibold">
-                  {selectedDateData || selectedTimeData
-                     ? selectedTimeData || selectedDateData
-                     : "Choose service date"}
+                  {selectedDateData && selectedTimeData
+                     ? `${selectedDateData}, ${selectedTimeData}`
+                     : selectedDateData || selectedTimeData || "Choose service date"}
                </p>
             </div>
             <div className="flex justify-start items-center py-1">
