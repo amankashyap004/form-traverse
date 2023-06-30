@@ -15,8 +15,7 @@ const ExtraServiceDetails = () => {
    const serviceFrequencyData = data.serviceFrequencyData;
 
    const handleDateSelect = (date) => {
-      //   dispatch(setSelectedDateData(date));
-      dispatch(setSelectedDateData("01/01/2023"));
+      dispatch(setSelectedDateData(date));
    };
 
    const handleDropdownChangeTiming = (option) => {

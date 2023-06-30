@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import moment from "moment";
 
 const CustomDatePicker = ({ onDateSelect }) => {
    const [selectedDate, setSelectedDate] = useState(null);
@@ -8,7 +9,7 @@ const CustomDatePicker = ({ onDateSelect }) => {
 
    const handleDateChange = (date) => {
       setSelectedDate(date);
-      onDateSelect(date);
+      onDateSelect(date ? moment(date).format("MM/DD/YYYY") : "");
    };
    return (
       <div>
