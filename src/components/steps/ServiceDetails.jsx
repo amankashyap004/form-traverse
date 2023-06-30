@@ -5,6 +5,7 @@ import MultiSelectDropdown from "../MultiSelectDropdown";
 import { setMultiOptions, setSelectedOptionLabel } from "../../store/actions/actions";
 import { getSelectedOptionLabel } from "../../store/selectors/selectors";
 import HouseDetails from "./HouseDetails";
+import ExtraServiceDetails from "./ExtraServiceDetails";
 import data from "../../data.json";
 
 const ServiceDetails = () => {
@@ -47,6 +48,9 @@ const ServiceDetails = () => {
                   options={dropdownMultiSelectOptions}
                   onChange={handleSelectedOptionsChange}
                />
+            </div>
+            <div className="mb-4">
+               <ExtraServiceDetails />
             </div>
          </form>
       </section>
