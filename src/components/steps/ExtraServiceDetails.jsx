@@ -7,20 +7,10 @@ import {
 } from "../../store/actions/actions";
 import data from "../../data.json";
 
-const serviceFrequencyData = [
-   {
-      value: "option1",
-      label: "One Time Cleaning",
-   },
-   {
-      value: "option2",
-      label: "Weekly Cleaning (20%)",
-   },
-];
-
 const ExtraServiceDetails = () => {
    const dispatch = useDispatch();
    const timingData = data.timingData;
+   const serviceFrequencyData = data.serviceFrequencyData;
 
    const handleDropdownChangeTiming = (option) => {
       dispatch(setSelectedTimingData(option.label));
