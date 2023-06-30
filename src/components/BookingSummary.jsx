@@ -21,7 +21,7 @@ const BookingSummary = () => {
    const selectedServiceFrequency = useSelector(getSelectedServiceFrequencyData);
 
    return (
-      <section className="w-[90%]">
+      <section className="w-[90%] h-full">
          <h1 className="font-extrabold text-3xl border-b border-slate-400 pb-4">Booking summary</h1>
          <div className="flex justify-start items-start flex-col py-4">
             <div className="flex justify-start items-center py-1">

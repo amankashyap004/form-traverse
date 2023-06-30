@@ -7,7 +7,7 @@ const SelectedMultiOptions = () => {
    return (
       <div>
          {selectedMultiOptions.length > 0 && (
-            <div className="flex justify-start items-center flex-col max-h-48 overflow-y-auto my-2 px-2 py-4 border-y border-slate-400">
+            <div className="flex justify-start items-center flex-col max-h-48 overflow-y-auto my-2 px-2 py-4 border-t border-slate-400">
                {selectedMultiOptions.map((option) => (
                   <div key={option.value} className="flex justify-between items-center w-full my-1">
                      <span className="text-base font-semibold">{option.label}</span>
