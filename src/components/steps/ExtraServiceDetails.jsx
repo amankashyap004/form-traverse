@@ -1,7 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CustomDropdown from "../CustomDropdown";
-import { setSelectedTimingData } from "../../store/actions/actions";
+import {
+   setSelectedTimingData,
+   setSelectedServiceFrequencyData,
+} from "../../store/actions/actions";
 import data from "../../data.json";
 
 const serviceFrequencyData = [
@@ -24,7 +27,7 @@ const ExtraServiceDetails = () => {
    };
 
    const handleDropdownServiceFrequency = (option) => {
-      console.log(option.label);
+      dispatch(setSelectedServiceFrequencyData(option.label));
    };
 
    return (

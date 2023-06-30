@@ -4,16 +4,19 @@ import SelectedMultiOptions from "./steps/SelectedMultiOptions";
 import HouseOutlinedIcon from "@mui/icons-material/HouseOutlined";
 import CottageOutlinedIcon from "@mui/icons-material/CottageOutlined";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import CleaningServicesIcon from "@mui/icons-material/CleaningServices";
 import {
    getSelectedOptionLabel,
    getSelectedBoxData,
    getSelectedTimingData,
+   getSelectedServiceFrequencyData,
 } from "../store/selectors/selectors";
 
 const BookingSummary = () => {
    const selectedOptionLabel = useSelector(getSelectedOptionLabel);
    const selectedBoxData = useSelector(getSelectedBoxData);
    const selectedTimeData = useSelector(getSelectedTimingData);
+   const selectedServiceFrequency = useSelector(getSelectedServiceFrequencyData);
 
    return (
       <section className="w-[90%]">
@@ -31,6 +34,12 @@ const BookingSummary = () => {
                <CalendarMonthIcon sx={{ fontSize: 35 }} />
                <p className="ml-2 text-base font-semibold">
                   {selectedTimeData ? selectedTimeData : "Choose service date"}
+               </p>
+            </div>
+            <div className="flex justify-start items-center py-1">
+               <CleaningServicesIcon sx={{ fontSize: 35 }} />
+               <p className="ml-2 text-base font-semibold">
+                  {selectedServiceFrequency ? selectedServiceFrequency : "Service frequency"}
                </p>
             </div>
          </div>

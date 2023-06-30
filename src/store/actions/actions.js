@@ -25,3 +25,10 @@ export const setSelectedTimingData = (selectedTimeData) => {
       payload: selectedTimeData,
    };
 };
+
+export const setSelectedServiceFrequencyData = (selectedServiceFrequency) => {
+   return {
+      type: "SET_SELECTED_SERVICE_FREQUENCY_DATA",
+      payload: selectedServiceFrequency,
+   };
+};
