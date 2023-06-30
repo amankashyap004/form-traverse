@@ -19,6 +19,13 @@ export const setMultiOptions = (multiOptions) => {
    };
 };
 
+export const setSelectedDateData = (selectedDateData) => {
+   return {
+      type: "SET_SELECTED_DATE_DATA",
+      payload: selectedDateData,
+   };
+};
+
 export const setSelectedTimingData = (selectedTimeData) => {
    return {
       type: "SET_SELECTED_TIME_DATA",

@@ -2,6 +2,7 @@ const initialState = {
    selectedOptionLabel: "",
    selectedBoxData: "",
    selectedMultiOptions: [],
+   selectedDateData: "",
    selectedTimeData: "",
    selectedServiceFrequency: "",
 };
@@ -22,6 +23,11 @@ const reducer = (state = initialState, action) => {
          return {
             ...state,
             selectedOptionLabel: action.payload,
+         };
+      case "SET_SELECTED_DATE_DATA":
+         return {
+            ...state,
+            selectedDateData: action.payload,
          };
       case "SET_SELECTED_TIME_DATA":
          return {
