@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import SelectedMultiOptions from "./steps/SelectedMultiOptions";
 import HouseOutlinedIcon from "@mui/icons-material/HouseOutlined";
 import CottageOutlinedIcon from "@mui/icons-material/CottageOutlined";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import {
    getSelectedOptionLabel,
    getSelectedBoxData,
@@ -27,7 +28,10 @@ const BookingSummary = () => {
                <p className="ml-2 text-base font-semibold">{selectedBoxData}</p>
             </div>
             <div className="flex justify-start items-center py-1">
-               <p className="ml-2 text-base font-semibold">{selectedTimeData}</p>
+               <CalendarMonthIcon sx={{ fontSize: 35 }} />
+               <p className="ml-2 text-base font-semibold">
+                  {selectedTimeData ? selectedTimeData : "Choose service date"}
+               </p>
             </div>
          </div>
          <div className="pb-4 w-full">
