@@ -50,6 +50,10 @@ const BookingSummary = () => {
          <div className="pb-4 w-full">
             <SelectedMultiOptions />
          </div>
+         <div className="flex justify-between items-center py-4 border-t border-slate-400 bottom-1 w-full">
+            <span className="text-2xl font-black">TODAY's TOTAL</span>
+            <span className="text-2xl font-black">$800.00</span>
+         </div>
       </section>
    );
 };
