@@ -1,6 +1,7 @@
 const initialState = {
-   selectedMultiOptions: [],
    selectedOptionLabel: "",
+   selectedBoxData: "",
+   selectedMultiOptions: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -9,6 +10,11 @@ const reducer = (state = initialState, action) => {
          return {
             ...state,
             selectedMultiOptions: action.payload,
+         };
+      case "SET_SELECTED_BOX_DATA":
+         return {
+            ...state,
+            selectedBoxData: action.payload,
          };
       case "SET_SELECTED_OPTION_LABEL":
          return {
