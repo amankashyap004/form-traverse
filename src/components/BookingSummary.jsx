@@ -1,13 +1,18 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import SelectedMultiOptions from "./steps/SelectedMultiOptions";
-import { getSelectedOptionLabel, getSelectedBoxData } from "../store/selectors/selectors";
 import HouseOutlinedIcon from "@mui/icons-material/HouseOutlined";
 import CottageOutlinedIcon from "@mui/icons-material/CottageOutlined";
+import {
+   getSelectedOptionLabel,
+   getSelectedBoxData,
+   getSelectedTimingData,
+} from "../store/selectors/selectors";
 
 const BookingSummary = () => {
    const selectedOptionLabel = useSelector(getSelectedOptionLabel);
    const selectedBoxData = useSelector(getSelectedBoxData);
+   const selectedTimeData = useSelector(getSelectedTimingData);
 
    return (
       <section className="w-[90%]">
@@ -21,8 +26,10 @@ const BookingSummary = () => {
                <CottageOutlinedIcon sx={{ fontSize: 35 }} />
                <p className="ml-2 text-base font-semibold">{selectedBoxData}</p>
             </div>
+            <div className="flex justify-start items-center py-1">
+               <p className="ml-2 text-base font-semibold">{selectedTimeData}</p>
+            </div>
          </div>
-
          <div className="pb-4 w-full">
             <SelectedMultiOptions />
          </div>

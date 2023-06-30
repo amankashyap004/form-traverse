@@ -1,7 +1,7 @@
-export const setMultiOptions = (multiOptions) => {
+export const setSelectedOptionLabel = (selectedOptionLabel) => {
    return {
-      type: "SET_MULTI_OPTIONS",
-      payload: multiOptions,
+      type: "SET_SELECTED_OPTION_LABEL",
+      payload: selectedOptionLabel,
    };
 };
 
@@ -12,9 +12,16 @@ export const setSelectedBoxData = (data) => {
    };
 };
 
-export const setSelectedOptionLabel = (selectedOptionLabel) => {
+export const setMultiOptions = (multiOptions) => {
    return {
-      type: "SET_SELECTED_OPTION_LABEL",
-      payload: selectedOptionLabel,
+      type: "SET_MULTI_OPTIONS",
+      payload: multiOptions,
+   };
+};
+
+export const setSelectedTimingData = (selectedTimeData) => {
+   return {
+      type: "SET_SELECTED_TIME_DATA",
+      payload: selectedTimeData,
    };
 };
