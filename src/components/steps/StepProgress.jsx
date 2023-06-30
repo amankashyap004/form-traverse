@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ServiceDetails from "./ServiceDetails";
+import Button from "../Button";
 
 const StepProgress = () => {
    const [activeStep, setActiveStep] = useState(1);
@@ -22,6 +23,9 @@ const StepProgress = () => {
          </div>
          <div className="mt-4 w-full">
             <ServiceDetails />
+         </div>
+         <div className="mt-4 w-full">
+            <Button contained="Next Step" disabled={false} />
          </div>
       </section>
    );
