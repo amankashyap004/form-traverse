@@ -5,6 +5,7 @@ import HouseOutlinedIcon from "@mui/icons-material/HouseOutlined";
 import CottageOutlinedIcon from "@mui/icons-material/CottageOutlined";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import CleaningServicesIcon from "@mui/icons-material/CleaningServices";
+import TotalPrice from "./TotalPrice";
 import {
    getSelectedOptionLabel,
    getSelectedBoxData,
@@ -58,10 +59,8 @@ const BookingSummary = () => {
                updateTotalPriceOfSelectedMultiOptions={updateTotalPriceOfSelectedMultiOptions}
             />
          </div>
-         <div className="flex justify-between items-center py-4 border-t border-slate-400 bottom-1 w-full">
-            <span className="text-2xl font-black">TODAY's TOTAL</span>
-            <span className="text-2xl font-black">$800.00</span>
-            <span className="text-2xl font-black">${totalPriceOfSelectedMultiOptions}</span>
+         <div className="w-full">
+            <TotalPrice totalPriceOfSelectedMultiOptions={totalPriceOfSelectedMultiOptions} />
          </div>
       </section>
    );
