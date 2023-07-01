@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 const SelectedMultiOptions = ({ updateTotalPriceOfSelectedMultiOptions }) => {
@@ -13,7 +13,9 @@ const SelectedMultiOptions = ({ updateTotalPriceOfSelectedMultiOptions }) => {
       return total;
    };
 
-   updateTotalPriceOfSelectedMultiOptions(totalPrice());
+   useEffect(() => {
+      updateTotalPriceOfSelectedMultiOptions(totalPrice());
+   }, [selectedMultiOptions]);
 
    return (
       <div>
