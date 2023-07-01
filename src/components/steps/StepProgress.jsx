@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ServiceDetails from "./ServiceDetails";
 import ContactInformation from "./contactInformation/ContactInformation";
+import ServiceAddress from "./serviceAddress/ServiceAddress";
 
 import Button from "../Button";
 
@@ -26,6 +27,7 @@ const StepProgress = () => {
          <div className="mt-4 w-full">
             <ServiceDetails />
             <ContactInformation />
+            <ServiceAddress />
          </div>
          <div className="mt-4 w-full">
             <Button contained="Next Step" disabled={false} />
