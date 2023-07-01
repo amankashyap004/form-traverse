@@ -1,8 +1,19 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-const SelectedMultiOptions = () => {
+const SelectedMultiOptions = ({ updateTotalPriceOfSelectedMultiOptions }) => {
    const selectedMultiOptions = useSelector((state) => state.selectedMultiOptions);
+
+   const totalPrice = () => {
+      let total = 0;
+      for (const option of selectedMultiOptions) {
+         const price = parseInt(option.price.slice(1)); // Remove the "$" sign and parse as integer
+         total += price;
+      }
+      return total;
+   };
+
+   updateTotalPriceOfSelectedMultiOptions(totalPrice());
 
    return (
       <div>

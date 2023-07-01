@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import SelectedMultiOptions from "./steps/SelectedMultiOptions";
 import HouseOutlinedIcon from "@mui/icons-material/HouseOutlined";
@@ -19,6 +19,12 @@ const BookingSummary = () => {
    const selectedDateData = useSelector(getSelectedDateData);
    const selectedTimeData = useSelector(getSelectedTimingData);
    const selectedServiceFrequency = useSelector(getSelectedServiceFrequencyData);
+
+   const [totalPriceOfSelectedMultiOptions, setTotalPriceOfSelectedMultiOptions] = useState(0);
+
+   const updateTotalPriceOfSelectedMultiOptions = (price) => {
+      setTotalPriceOfSelectedMultiOptions(price);
+   };
 
    return (
       <section className="w-[90%] h-full">
@@ -48,11 +54,14 @@ const BookingSummary = () => {
             </div>
          </div>
          <div className="pb-4 w-full">
-            <SelectedMultiOptions />
+            <SelectedMultiOptions
+               updateTotalPriceOfSelectedMultiOptions={updateTotalPriceOfSelectedMultiOptions}
+            />
          </div>
          <div className="flex justify-between items-center py-4 border-t border-slate-400 bottom-1 w-full">
             <span className="text-2xl font-black">TODAY's TOTAL</span>
             <span className="text-2xl font-black">$800.00</span>
+            <span className="text-2xl font-black">${totalPriceOfSelectedMultiOptions}</span>
          </div>
       </section>
    );
