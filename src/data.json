@@ -173,27 +173,33 @@
    "serviceFrequencyData": [
       {
          "value": "option1",
-         "label": "One Time Cleaning"
+         "label": "One Time Cleaning",
+         "offer": ""
       },
       {
          "value": "option2",
-         "label": "Weekly Cleaning (20%)"
+         "label": "Weekly Cleaning (20%)",
+         "offer": "20%"
       },
       {
          "value": "option3",
-         "label": "Every 2 Weeks (15%)"
+         "label": "Every 2 Weeks (15%)",
+         "offer": "15%"
       },
       {
          "value": "option4",
-         "label": "Every 3 Weeks (10%)"
+         "label": "Every 3 Weeks (10%)",
+         "offer": "10%"
       },
       {
          "value": "option5",
-         "label": "Every 6 Weeks (2.5%)"
+         "label": "Every 6 Weeks (2.5%)",
+         "offer": "2.5%"
       },
       {
          "value": "option6",
-         "label": "Every 8 Weeks ($5 off)"
+         "label": "Every 8 Weeks ($5 off)",
+         "offer": "$5"
       }
    ]
 }

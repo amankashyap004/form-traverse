@@ -6,6 +6,7 @@ import {
    setSelectedDateData,
    setSelectedTimingData,
    setSelectedServiceFrequencyData,
+   setSelectedServiceFrequencyOffer,
 } from "../../store/actions/actions";
 import data from "../../data.json";
 
@@ -24,6 +25,7 @@ const ExtraServiceDetails = () => {
 
    const handleDropdownServiceFrequency = (option) => {
       dispatch(setSelectedServiceFrequencyData(option.label));
+      dispatch(setSelectedServiceFrequencyOffer(option.offer));
    };
 
    return (

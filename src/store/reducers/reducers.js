@@ -7,6 +7,7 @@ const initialState = {
    selectedDateData: "",
    selectedTimeData: "",
    selectedServiceFrequency: "",
+   selectedServiceFrequencyOffer: "",
 };
 
 const reducer = (state = initialState, action) => {
@@ -50,6 +51,11 @@ const reducer = (state = initialState, action) => {
          return {
             ...state,
             selectedServiceFrequency: action.payload,
+         };
+      case "SET_SELECTED_SERVICE_FREQUENCY_OFFER":
+         return {
+            ...state,
+            selectedServiceFrequencyOffer: action.payload,
          };
       default:
          return state;
