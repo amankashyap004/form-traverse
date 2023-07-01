@@ -2,23 +2,28 @@
    "dropdownOptions": [
       {
          "value": "option1",
-         "label": "Deep Cleaning (for homes that have not been cleaned in 3+ weeks)"
+         "label": "Deep Cleaning (for homes that have not been cleaned in 3+ weeks)",
+         "price": "$248"
       },
       {
          "value": "option2",
-         "label": "Regular Cleaning (for homes cleaned in last 3 weeks)"
+         "label": "Regular Cleaning (for homes cleaned in last 3 weeks)",
+         "price": "$149"
       },
       {
          "value": "option3",
-         "label": "Moving Cleanup (to clean home for new tenants)"
+         "label": "Moving Cleanup (to clean home for new tenants)",
+         "price": "$303"
       },
       {
          "value": "option4",
-         "label": "Post Construction Cleaning"
+         "label": "Post Construction Cleaning",
+         "price": "$429"
       },
       {
          "value": "option5",
-         "label": "Vacation Rental Cleaning"
+         "label": "Vacation Rental Cleaning",
+         "price": "$114"
       }
    ],
    "dataOfHouseDetails": [
