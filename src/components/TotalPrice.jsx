@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { getSelectedBoxPrice } from "../store/selectors/selectors";
 
 const TotalPrice = ({ totalPriceOfSelectedMultiOptions }) => {
+   const setSelectedBoxPrice = useSelector(getSelectedBoxPrice);
+   const selectedBoxPrice = parseInt(setSelectedBoxPrice.slice(1));
+
+   const totalPrice = () => {
+      let total = 0;
+      const price = totalPriceOfSelectedMultiOptions + selectedBoxPrice;
+      total += price;
+      return total;
+   };
+
    return (
       <div className="flex justify-between items-center py-4 border-t border-slate-400 bottom-1 w-full">
          <span className="text-2xl font-black">TODAY's TOTAL</span>
-         <span className="text-2xl font-black">${totalPriceOfSelectedMultiOptions}</span>
+         <span className="text-2xl font-black">${totalPrice()}</span>
       </div>
    );
 };

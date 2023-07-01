@@ -1,6 +1,7 @@
 export const getSelectedOptionLabel = (state) => state.selectedOptionLabel;
 
 export const getSelectedBoxData = (state) => state.selectedBoxData;
+export const getSelectedBoxPrice = (state) => state.selectedBoxPrice;
 
 export const getSelectedDateData = (state) => state.selectedDateData;
 

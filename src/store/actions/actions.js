@@ -12,6 +12,13 @@ export const setSelectedBoxData = (data) => {
    };
 };
 
+export const setSelectedBoxPrice = (price) => {
+   return {
+      type: "SET_SELECTED_BOX_PRICE",
+      payload: price,
+   };
+};
+
 export const setMultiOptions = (multiOptions) => {
    return {
       type: "SET_MULTI_OPTIONS",
