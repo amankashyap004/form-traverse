@@ -25,27 +25,34 @@ const TotalPrice = ({ totalPriceOfSelectedMultiOptions }) => {
 
    const calculateTotalPrice = () => {
       let total = totalPrice();
-      if (selectedServiceFrequencyOffer === "20%") {
-         total = total * 0.8;
-      } else if (selectedServiceFrequencyOffer === "15%") {
-         total = total * 0.85;
-      } else if (selectedServiceFrequencyOffer === "10%") {
-         total = total * 0.9;
-      } else if (selectedServiceFrequencyOffer === "2.5%") {
-         total = total * 0.975;
-      } else if (selectedServiceFrequencyOffer === "$5") {
-         total = total - 5;
-      } else {
-         total = total;
+      if (selectedServiceFrequencyOffer !== "") {
+         let discountType = selectedServiceFrequencyOffer.includes("%") ? "PERCENT" : "DIRECT";
+         let discountValue = 0;
+         if (discountType === "PERCENT") {
+            discountValue = selectedServiceFrequencyOffer.replace("%", "");
+            discountValue = parseFloat(discountValue);
+            total = total - (total * discountValue) / 100;
+         } else if (discountType === "DIRECT") {
+            discountValue = selectedServiceFrequencyOffer.replace("$", "");
+            discountValue = parseFloat(discountValue);
+            total = total - discountValue;
+         }
+         return Math.round(total);
       }
-      return total;
    };
 
    return (
-      <div className="flex justify-between items-center py-4 border-t border-slate-400 bottom-1 w-full">
-         <span className="text-2xl font-black">TODAY's TOTAL</span>
-         <span className="text-2xl font-black">${totalPrice()}</span>
-         <span className="text-2xl font-black">${calculateTotalPrice()}</span>
+      <div className="flex justify-between items-center flex-col py-4 border-t border-slate-400 bottom-1 w-full">
+         <div className="flex justify-between items-center w-full">
+            <span className="text-2xl font-black">TODAY's TOTAL</span>
+            <span className="text-2xl font-black">${totalPrice()}</span>
+         </div>
+         {calculateTotalPrice() && (
+            <div className="flex justify-between items-center w-full mt-2">
+               <span className="text-2xl font-black">Price After 1st Clean</span>
+               <span className="text-2xl font-black">${calculateTotalPrice()}</span>
+            </div>
+         )}
       </div>
    );
 };
