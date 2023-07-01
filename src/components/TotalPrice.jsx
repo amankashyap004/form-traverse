@@ -1,15 +1,18 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { getSelectedBoxPrice } from "../store/selectors/selectors";
+import { getSelectedBoxPrice, getSelectedOptionPrice } from "../store/selectors/selectors";
 
 const TotalPrice = ({ totalPriceOfSelectedMultiOptions }) => {
-   const selectedBoxPrice = useSelector(getSelectedBoxPrice);
+   const selectedOptionPrice = useSelector(getSelectedOptionPrice);
+   const parsedSelectedOptionPrice = parseInt(selectedOptionPrice.toString().slice(1));
 
+   const selectedBoxPrice = useSelector(getSelectedBoxPrice);
    const parsedSelectedBoxPrice = parseInt(selectedBoxPrice.toString().slice(1));
 
    const totalPrice = () => {
       let total = 0;
-      const price = parsedSelectedBoxPrice + totalPriceOfSelectedMultiOptions;
+      const price =
+         parsedSelectedOptionPrice + parsedSelectedBoxPrice + totalPriceOfSelectedMultiOptions;
       total += price;
       return total;
    };

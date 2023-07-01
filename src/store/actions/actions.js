@@ -5,6 +5,13 @@ export const setSelectedOptionLabel = (selectedOptionLabel) => {
    };
 };
 
+export const setSelectedOptionPrice = (selectedOptionPrice) => {
+   return {
+      type: "SET_SELECTED_OPTION_PRICE",
+      payload: selectedOptionPrice,
+   };
+};
+
 export const setSelectedBoxData = (data) => {
    return {
       type: "SET_SELECTED_BOX_DATA",
