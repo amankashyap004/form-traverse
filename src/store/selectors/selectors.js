@@ -10,3 +10,5 @@ export const getSelectedTimingData = (state) => state.selectedTimeData;
 
 export const getSelectedServiceFrequencyData = (state) => state.selectedServiceFrequency;
 export const getSelectedServiceFrequencyOffer = (state) => state.selectedServiceFrequencyOffer;
+
+export const getInfoFormData = (state) => state.infoFormData;

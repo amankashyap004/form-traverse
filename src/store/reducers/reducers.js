@@ -8,6 +8,7 @@ const initialState = {
    selectedTimeData: "",
    selectedServiceFrequency: "",
    selectedServiceFrequencyOffer: "",
+   infoFormData: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -56,6 +57,11 @@ const reducer = (state = initialState, action) => {
          return {
             ...state,
             selectedServiceFrequencyOffer: action.payload,
+         };
+      case "SET_INFO_FORM_DATA":
+         return {
+            ...state,
+            infoFormData: action.payload,
          };
       default:
          return state;

@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import CustomizeInput from "../../CustomizeInput";
 import CustomizeTextarea from "../../CustomizeTextarea";
+import { setInfoFormData } from "../../../store/actions/actions";
 
 const ContactInformation = () => {
+   const dispatch = useDispatch();
+
    const [formData, setFormData] = useState({
       firstName: "",
       lastName: "",
@@ -13,15 +17,8 @@ const ContactInformation = () => {
 
    const handleChange = (e) => {
       const { name, value } = e.target;
-      setFormData((prevData) => ({
-         ...prevData,
-         [name]: value,
-      }));
-   };
-
-   const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log(formData);
+      setFormData({ ...formData, [name]: value });
+      dispatch(setInfoFormData({ ...formData, [name]: value }));
    };
 
    return (
@@ -32,7 +29,7 @@ const ContactInformation = () => {
                Please provide your name, phone number and email
             </span>
          </div>
-         <form onSubmit={handleSubmit}>
+         <form>
             <div className="flex justify-center items-center flex-col w-full">
                <div className="grid grid-cols-2 w-full">
                   <CustomizeInput

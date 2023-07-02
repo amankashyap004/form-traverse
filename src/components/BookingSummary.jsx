@@ -12,6 +12,7 @@ import {
    getSelectedDateData,
    getSelectedTimingData,
    getSelectedServiceFrequencyData,
+   getInfoFormData,
 } from "../store/selectors/selectors";
 
 const BookingSummary = () => {
@@ -21,11 +22,15 @@ const BookingSummary = () => {
    const selectedTimeData = useSelector(getSelectedTimingData);
    const selectedServiceFrequency = useSelector(getSelectedServiceFrequencyData);
 
+   const infoFormData = useSelector(getInfoFormData);
+
    const [totalPriceOfSelectedMultiOptions, setTotalPriceOfSelectedMultiOptions] = useState(0);
 
    const updateTotalPriceOfSelectedMultiOptions = (price) => {
       setTotalPriceOfSelectedMultiOptions(price);
    };
+
+   console.log(infoFormData);
 
    return (
       <section className="w-[90%] h-full">

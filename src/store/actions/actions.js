@@ -60,3 +60,10 @@ export const setSelectedServiceFrequencyOffer = (selectedServiceFrequencyOffer) 
       payload: selectedServiceFrequencyOffer,
    };
 };
+
+export const setInfoFormData = (infoFormData) => {
+   return {
+      type: "SET_INFO_FORM_DATA",
+      payload: infoFormData,
+   };
+};
