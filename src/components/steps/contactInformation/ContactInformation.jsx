@@ -1,4 +1,5 @@
 import React from "react";
+import CustomizeInput from "../../CustomizeInput";
 
 const ContactInformation = () => {
    return (
@@ -8,6 +9,10 @@ const ContactInformation = () => {
             <span className="text-lg font-bold my-2">
                Please provide your name, phone number and email
             </span>
+         </div>
+         <div className="flex justify-between items-center">
+            <CustomizeInput type="text" placeholder={"First name"} />
+            <CustomizeInput type="text" placeholder={"First name"} />
          </div>
       </section>
    );
