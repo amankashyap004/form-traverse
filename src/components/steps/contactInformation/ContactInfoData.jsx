@@ -5,12 +5,14 @@ import { getInfoFormData } from "../../../store/selectors/selectors";
 
 const ContactInfoData = () => {
    const infoFormData = useSelector(getInfoFormData);
-   console.log(infoFormData);
    return (
-      <section>
-         <div>
-            <span>{infoFormData.firstName}</span>
+      <section className="flex justify-start items-start flex-col text-base font-semibold">
+         <div className="flex justify-start items-center">
+            <span className="mr-2">{infoFormData.firstName}</span>
+            <span>{infoFormData.lastName}</span>
          </div>
+         <span>{infoFormData.phoneNumber}</span>
+         <span>{infoFormData.email}</span>
       </section>
    );
 };
