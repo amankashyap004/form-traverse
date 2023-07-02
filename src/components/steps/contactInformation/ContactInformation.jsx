@@ -17,8 +17,26 @@ const ContactInformation = () => {
 
    const handleChange = (e) => {
       const { name, value } = e.target;
-      setFormData({ ...formData, [name]: value });
-      dispatch(setInfoFormData({ ...formData, [name]: value }));
+
+      if (name === "phoneNumber") {
+         let numericValue = value.replace(/\D/g, "");
+
+         if (numericValue.length > 10) {
+            numericValue = numericValue.slice(0, 10);
+         }
+
+         setFormData((prevFormData) => ({
+            ...prevFormData,
+            [name]: numericValue,
+         }));
+         dispatch(setInfoFormData({ ...formData, [name]: numericValue }));
+      } else {
+         setFormData((prevFormData) => ({
+            ...prevFormData,
+            [name]: value,
+         }));
+         dispatch(setInfoFormData({ ...formData, [name]: value }));
+      }
    };
 
    return (
