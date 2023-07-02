@@ -31,10 +31,10 @@ const BookingSummary = () => {
    return (
       <section className="w-[90%] h-full">
          <h1 className="font-extrabold text-3xl border-b border-slate-400 pb-4">Booking summary</h1>
-         <div className="py-4">
+         <div>
             <ContactInfoData />
          </div>
-         <div className="flex justify-start items-start flex-col py-4 border-t border-slate-400">
+         <div className="flex justify-start items-start flex-col py-4">
             <div className="flex justify-start items-center py-1">
                <HouseOutlinedIcon sx={{ fontSize: 40 }} />
                <p className="ml-2 text-base font-semibold">{selectedOptionLabel}</p>
