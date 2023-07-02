@@ -6,13 +6,13 @@ import CottageOutlinedIcon from "@mui/icons-material/CottageOutlined";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import CleaningServicesIcon from "@mui/icons-material/CleaningServices";
 import TotalPrice from "./TotalPrice";
+import ContactInfoData from "./steps/contactInformation/ContactInfoData";
 import {
    getSelectedOptionLabel,
    getSelectedBoxData,
    getSelectedDateData,
    getSelectedTimingData,
    getSelectedServiceFrequencyData,
-   getInfoFormData,
 } from "../store/selectors/selectors";
 
 const BookingSummary = () => {
@@ -22,20 +22,19 @@ const BookingSummary = () => {
    const selectedTimeData = useSelector(getSelectedTimingData);
    const selectedServiceFrequency = useSelector(getSelectedServiceFrequencyData);
 
-   const infoFormData = useSelector(getInfoFormData);
-
    const [totalPriceOfSelectedMultiOptions, setTotalPriceOfSelectedMultiOptions] = useState(0);
 
    const updateTotalPriceOfSelectedMultiOptions = (price) => {
       setTotalPriceOfSelectedMultiOptions(price);
    };
 
-   console.log(infoFormData);
-
    return (
       <section className="w-[90%] h-full">
          <h1 className="font-extrabold text-3xl border-b border-slate-400 pb-4">Booking summary</h1>
-         <div className="flex justify-start items-start flex-col py-4">
+         <div className="py-4">
+            <ContactInfoData />
+         </div>
+         <div className="flex justify-start items-start flex-col py-4 border-t border-slate-400">
             <div className="flex justify-start items-center py-1">
                <HouseOutlinedIcon sx={{ fontSize: 40 }} />
                <p className="ml-2 text-base font-semibold">{selectedOptionLabel}</p>
