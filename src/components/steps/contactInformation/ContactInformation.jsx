@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CustomizeInput from "../../CustomizeInput";
+import CustomizeTextarea from "../../CustomizeTextarea";
 
 const ContactInformation = () => {
    const [formData, setFormData] = useState({
@@ -7,6 +8,7 @@ const ContactInformation = () => {
       lastName: "",
       phoneNumber: "",
       email: "",
+      textarea: "",
    });
 
    const handleChange = (e) => {
@@ -60,6 +62,14 @@ const ContactInformation = () => {
                      value={formData.email}
                      onChange={handleChange}
                      name="email"
+                  />
+               </div>
+               <div className="w-full">
+                  <CustomizeTextarea
+                     placeholder="How did you hear about us? (optional)"
+                     value={formData.textarea}
+                     onChange={handleChange}
+                     name="textarea"
                   />
                </div>
             </div>
