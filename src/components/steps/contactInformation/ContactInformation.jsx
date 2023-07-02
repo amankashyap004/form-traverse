@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import CustomizeInput from "../../CustomizeInput";
 
 const ContactInformation = () => {
+   const [formData, setFormData] = useState({
+      firstName: "",
+      lastName: "",
+      phoneNumber: "",
+      email: "",
+   });
+
+   const handleChange = (e) => {
+      const { name, value } = e.target;
+      setFormData((prevData) => ({
+         ...prevData,
+         [name]: value,
+      }));
+   };
+
+   const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log(formData);
+   };
+
    return (
       <section>
          <div className=" flex justify-start items-start flex-col">
@@ -10,10 +30,40 @@ const ContactInformation = () => {
                Please provide your name, phone number and email
             </span>
          </div>
-         <div className="flex justify-between items-center">
-            <CustomizeInput type="text" placeholder={"First name"} />
-            <CustomizeInput type="text" placeholder={"First name"} />
-         </div>
+         <form onSubmit={handleSubmit}>
+            <div className="flex justify-center items-center flex-col w-full">
+               <div className="grid grid-cols-2 w-full">
+                  <CustomizeInput
+                     type="text"
+                     placeholder="First Name"
+                     value={formData.firstName}
+                     onChange={handleChange}
+                     name="firstName"
+                  />
+                  <CustomizeInput
+                     type="text"
+                     placeholder="Last Name"
+                     value={formData.lastName}
+                     onChange={handleChange}
+                     name="lastName"
+                  />
+                  <CustomizeInput
+                     type="text"
+                     placeholder="Phone Number"
+                     value={formData.phoneNumber}
+                     onChange={handleChange}
+                     name="phoneNumber"
+                  />
+                  <CustomizeInput
+                     type="email"
+                     placeholder="Email"
+                     value={formData.email}
+                     onChange={handleChange}
+                     name="email"
+                  />
+               </div>
+            </div>
+         </form>
       </section>
    );
 };
