@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import CustomDropdown from "../CustomDropdown";
-import MultiSelectDropdown from "../MultiSelectDropdown";
-import { getSelectedOptionLabel } from "../../store/selectors/selectors";
+import CustomDropdown from "../../CustomDropdown";
+import MultiSelectDropdown from "../../MultiSelectDropdown";
+import { getSelectedOptionLabel } from "../../../store/selectors/selectors";
 import HouseDetails from "./HouseDetails";
 import ExtraServiceDetails from "./ExtraServiceDetails";
-import data from "../../data.json";
+import data from "../../../data.json";
 import {
    setMultiOptions,
    setSelectedOptionLabel,
    setSelectedOptionPrice,
-} from "../../store/actions/actions";
+} from "../../../store/actions/actions";
 
 const ServiceDetails = () => {
    const dispatch = useDispatch();

@@ -4,7 +4,7 @@ import {
    getSelectedBoxPrice,
    getSelectedOptionPrice,
    getSelectedServiceFrequencyOffer,
-} from "../store/selectors/selectors";
+} from "../../store/selectors/selectors";
 
 const TotalPrice = ({ totalPriceOfSelectedMultiOptions }) => {
    const selectedOptionPrice = useSelector(getSelectedOptionPrice);

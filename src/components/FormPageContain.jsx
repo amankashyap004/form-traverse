@@ -1,6 +1,6 @@
 import React from "react";
-import StepProgress from "./steps/StepProgress";
-import BookingSummary from "./BookingSummary";
+import StepProgress from "./stepProgress/StepProgress";
+import BookingSummary from "./stepProgress/BookingSummary";
 
 const FormPageContain = () => {
    return (

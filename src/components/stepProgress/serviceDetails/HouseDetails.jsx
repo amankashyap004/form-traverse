@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import BasicBox from "../BasicBox";
-import { setSelectedBoxData, setSelectedBoxPrice } from "../../store/actions/actions";
-import data from "../../data.json";
+import { useDispatch } from "react-redux";
+import BasicBox from "../../BasicBox";
+import { setSelectedBoxData, setSelectedBoxPrice } from "../../../store/actions/actions";
+import data from "../../../data.json";
 
 const HouseDetails = () => {
    const dataOfHouseDetails = data.dataOfHouseDetails;

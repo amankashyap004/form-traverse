@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ServiceDetails from "./ServiceDetails";
+import ServiceDetails from "./serviceDetails/ServiceDetails";
 import ContactInformation from "./contactInformation/ContactInformation";
 import ServiceAddress from "./serviceAddress/ServiceAddress";
 import Button from "../Button";

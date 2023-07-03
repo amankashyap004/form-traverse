@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import SelectedMultiOptions from "./steps/SelectedMultiOptions";
 import HouseOutlinedIcon from "@mui/icons-material/HouseOutlined";
 import CottageOutlinedIcon from "@mui/icons-material/CottageOutlined";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import CleaningServicesIcon from "@mui/icons-material/CleaningServices";
+import SelectedMultiOptions from "./serviceDetails/SelectedMultiOptions";
+import ContactInfoData from "./contactInformation/ContactInfoData";
+import ServiceAddressData from "./serviceAddress/ServiceAddressData";
 import TotalPrice from "./TotalPrice";
-import ContactInfoData from "./steps/contactInformation/ContactInfoData";
-import ServiceAddressData from "./steps/serviceAddress/ServiceAddressData";
 import {
    getSelectedOptionLabel,
    getSelectedBoxData,
    getSelectedDateData,
    getSelectedTimingData,
    getSelectedServiceFrequencyData,
-} from "../store/selectors/selectors";
+} from "../../store/selectors/selectors";
 
 const BookingSummary = () => {
    const selectedOptionLabel = useSelector(getSelectedOptionLabel);

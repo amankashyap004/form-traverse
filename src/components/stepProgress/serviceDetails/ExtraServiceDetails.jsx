@@ -1,14 +1,14 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import CustomDropdown from "../CustomDropdown";
-import CustomDatePicker from "../CustomDatePicker";
+import CustomDropdown from "../../CustomDropdown";
+import CustomDatePicker from "../../CustomDatePicker";
 import {
    setSelectedDateData,
    setSelectedTimingData,
    setSelectedServiceFrequencyData,
    setSelectedServiceFrequencyOffer,
-} from "../../store/actions/actions";
-import data from "../../data.json";
+} from "../../../store/actions/actions";
+import data from "../../../data.json";
 
 const ExtraServiceDetails = () => {
    const dispatch = useDispatch();
