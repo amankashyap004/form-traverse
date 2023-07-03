@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import CustomizeInput from "../../CustomizeInput";
 import CustomDropdown from "../../CustomDropdown";
 import CustomizeTextarea from "../../CustomizeTextarea";
+import { setServiceFormData } from "../../../store/actions/actions";
 
 const dropdownState = [
    { value: "option1", label: "AK" },
@@ -10,7 +12,9 @@ const dropdownState = [
 ];
 
 const ServiceAddress = () => {
-   const [serviceFormData, setServiceFormData] = useState({
+   const dispatch = useDispatch();
+
+   const [formData, setFormData] = useState({
       streetAddress: "",
       aptSuite: "",
       city: "",
@@ -22,20 +26,19 @@ const ServiceAddress = () => {
    const handleChange = (e) => {
       const { name, value } = e.target;
 
-      setServiceFormData((prevFormData) => ({
+      setFormData((prevFormData) => ({
          ...prevFormData,
          [name]: value,
       }));
+      dispatch(setServiceFormData({ ...formData, [name]: value }));
    };
 
    const handleDropdownChange = (selectedOption) => {
-      setServiceFormData((prevFormData) => ({
+      setFormData((prevFormData) => ({
          ...prevFormData,
          selectedOption: selectedOption.label,
       }));
    };
-
-   console.log(serviceFormData);
 
    return (
       <section>
@@ -49,14 +52,14 @@ const ServiceAddress = () => {
                   <CustomizeInput
                      type="text"
                      placeholder="Street address"
-                     value={serviceFormData.streetAddress}
+                     value={formData.streetAddress}
                      onChange={handleChange}
                      name="streetAddress"
                   />
                   <CustomizeInput
                      type="text"
                      placeholder="Apt/Suite"
-                     value={serviceFormData.aptSuite}
+                     value={formData.aptSuite}
                      onChange={handleChange}
                      name="aptSuite"
                   />
@@ -65,7 +68,7 @@ const ServiceAddress = () => {
                   <CustomizeInput
                      type="text"
                      placeholder="City"
-                     value={serviceFormData.city}
+                     value={formData.city}
                      onChange={handleChange}
                      name="city"
                   />
@@ -79,7 +82,7 @@ const ServiceAddress = () => {
                   <CustomizeInput
                      type="text"
                      placeholder="Zip"
-                     value={serviceFormData.zip}
+                     value={formData.zip}
                      onChange={handleChange}
                      name="zip"
                   />
@@ -87,7 +90,7 @@ const ServiceAddress = () => {
                <div className="w-full">
                   <CustomizeTextarea
                      placeholder="Include notes such as access codes and parking instructions here. (optional)"
-                     value={serviceFormData.textarea}
+                     value={formData.textarea}
                      onChange={handleChange}
                      name="textarea"
                   />

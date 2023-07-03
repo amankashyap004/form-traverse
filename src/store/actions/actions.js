@@ -67,3 +67,10 @@ export const setInfoFormData = (infoFormData) => {
       payload: infoFormData,
    };
 };
+
+export const setServiceFormData = (serviceFormData) => {
+   return {
+      type: "SET_SERVICE_FORM_DATA",
+      payload: serviceFormData,
+   };
+};
