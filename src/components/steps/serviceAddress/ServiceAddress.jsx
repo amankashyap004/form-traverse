@@ -38,6 +38,7 @@ const ServiceAddress = () => {
          ...prevFormData,
          selectedOption: selectedOption.label,
       }));
+      dispatch(setServiceFormData({ ...formData, selectedOption: selectedOption.label }));
    };
 
    return (
