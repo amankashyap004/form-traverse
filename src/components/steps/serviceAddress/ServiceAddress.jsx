@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CustomizeInput from "../../CustomizeInput";
 import CustomDropdown from "../../CustomDropdown";
+import CustomizeTextarea from "../../CustomizeTextarea";
 
 const dropdownState = [
    { value: "option1", label: "AK" },
@@ -13,8 +14,9 @@ const ServiceAddress = () => {
       streetAddress: "",
       aptSuite: "",
       city: "",
-      zip: "",
       selectedOption: "",
+      zip: "",
+      textarea: "",
    });
 
    const handleChange = (e) => {
@@ -80,6 +82,14 @@ const ServiceAddress = () => {
                      value={serviceFormData.zip}
                      onChange={handleChange}
                      name="zip"
+                  />
+               </div>
+               <div className="w-full">
+                  <CustomizeTextarea
+                     placeholder="Include notes such as access codes and parking instructions here. (optional)"
+                     value={serviceFormData.textarea}
+                     onChange={handleChange}
+                     name="textarea"
                   />
                </div>
             </div>
