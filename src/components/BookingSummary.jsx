@@ -7,13 +7,13 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import CleaningServicesIcon from "@mui/icons-material/CleaningServices";
 import TotalPrice from "./TotalPrice";
 import ContactInfoData from "./steps/contactInformation/ContactInfoData";
+import ServiceAddressData from "./steps/serviceAddress/ServiceAddressData";
 import {
    getSelectedOptionLabel,
    getSelectedBoxData,
    getSelectedDateData,
    getSelectedTimingData,
    getSelectedServiceFrequencyData,
-   getServiceFormData,
 } from "../store/selectors/selectors";
 
 const BookingSummary = () => {
@@ -22,15 +22,12 @@ const BookingSummary = () => {
    const selectedDateData = useSelector(getSelectedDateData);
    const selectedTimeData = useSelector(getSelectedTimingData);
    const selectedServiceFrequency = useSelector(getSelectedServiceFrequencyData);
-   const serviceFormData = useSelector(getServiceFormData);
 
    const [totalPriceOfSelectedMultiOptions, setTotalPriceOfSelectedMultiOptions] = useState(0);
 
    const updateTotalPriceOfSelectedMultiOptions = (price) => {
       setTotalPriceOfSelectedMultiOptions(price);
    };
-
-   console.log(serviceFormData);
 
    return (
       <section className="w-[90%] h-full">
@@ -39,10 +36,7 @@ const BookingSummary = () => {
             <ContactInfoData />
          </div>
          <div>
-            {/* <span>{serviceFormData.streetAddress}</span>
-            <span>{serviceFormData.aptSuite}</span>
-            <span>{serviceFormData.city}</span>
-            <span>{serviceFormData.zip}</span> */}
+            <ServiceAddressData />
          </div>
          <div className="flex justify-start items-start flex-col py-4">
             <div className="flex justify-start items-center py-1">
