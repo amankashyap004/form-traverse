@@ -26,11 +26,25 @@ const ServiceAddress = () => {
    const handleChange = (e) => {
       const { name, value } = e.target;
 
-      setFormData((prevFormData) => ({
-         ...prevFormData,
-         [name]: value,
-      }));
-      dispatch(setServiceFormData({ ...formData, [name]: value }));
+      if (name === "zip") {
+         let numericValue = value.replace(/\D/g, "");
+
+         if (numericValue.length > 6) {
+            numericValue = numericValue.slice(0, 6);
+         }
+
+         setFormData((prevFormData) => ({
+            ...prevFormData,
+            [name]: numericValue,
+         }));
+         dispatch(setServiceFormData({ ...formData, [name]: numericValue }));
+      } else {
+         setFormData((prevFormData) => ({
+            ...prevFormData,
+            [name]: value,
+         }));
+         dispatch(setServiceFormData({ ...formData, [name]: value }));
+      }
    };
 
    const handleDropdownChange = (selectedOption) => {
