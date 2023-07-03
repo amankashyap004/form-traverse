@@ -1,5 +1,12 @@
 import React, { useState } from "react";
 import CustomizeInput from "../../CustomizeInput";
+import CustomDropdown from "../../CustomDropdown";
+
+const dropdownState = [
+   { value: "option1", label: "AK" },
+   { value: "option2", label: "CA" },
+   { value: "option3", label: "NY" },
+];
 
 const ServiceAddress = () => {
    const [serviceFormData, setServiceFormData] = useState({
@@ -7,6 +14,7 @@ const ServiceAddress = () => {
       aptSuite: "",
       city: "",
       zip: "",
+      selectedOption: "",
    });
 
    const handleChange = (e) => {
@@ -17,6 +25,15 @@ const ServiceAddress = () => {
          [name]: value,
       }));
    };
+
+   const handleDropdownChange = (selectedOption) => {
+      setServiceFormData((prevFormData) => ({
+         ...prevFormData,
+         selectedOption: selectedOption.label,
+      }));
+   };
+
+   console.log(serviceFormData);
 
    return (
       <section>
@@ -50,6 +67,13 @@ const ServiceAddress = () => {
                      onChange={handleChange}
                      name="city"
                   />
+                  <div className="w-[full-2] mr-2 my-2">
+                     <CustomDropdown
+                        options={dropdownState}
+                        defaultValue={"State"}
+                        onChange={handleDropdownChange}
+                     />
+                  </div>
                   <CustomizeInput
                      type="text"
                      placeholder="Zip"
