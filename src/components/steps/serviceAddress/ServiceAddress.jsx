@@ -4,15 +4,11 @@ import CustomizeInput from "../../CustomizeInput";
 import CustomDropdown from "../../CustomDropdown";
 import CustomizeTextarea from "../../CustomizeTextarea";
 import { setServiceFormData } from "../../../store/actions/actions";
-
-const dropdownState = [
-   { value: "option1", label: "AK" },
-   { value: "option2", label: "CA" },
-   { value: "option3", label: "NY" },
-];
+import data from "../../../data.json";
 
 const ServiceAddress = () => {
    const dispatch = useDispatch();
+   const dropdownState = data.dropdownState;
 
    const [formData, setFormData] = useState({
       streetAddress: "",

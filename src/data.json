@@ -201,5 +201,207 @@
          "label": "Every 8 Weeks ($5 off)",
          "offer": "$5"
       }
+   ],
+   "dropdownState": [
+      {
+         "value": "option1",
+         "label": "AL"
+      },
+      {
+         "value": "option2",
+         "label": "AK"
+      },
+      {
+         "value": "option3",
+         "label": "AZ"
+      },
+      {
+         "value": "option4",
+         "label": "AR"
+      },
+      {
+         "value": "option5",
+         "label": "CA"
+      },
+      {
+         "value": "option6",
+         "label": "CO"
+      },
+      {
+         "value": "option7",
+         "label": "CT"
+      },
+      {
+         "value": "option8",
+         "label": "DE"
+      },
+      {
+         "value": "option9",
+         "label": "FL"
+      },
+      {
+         "value": "option10",
+         "label": "GA"
+      },
+      {
+         "value": "option11",
+         "label": "HI"
+      },
+      {
+         "value": "option12",
+         "label": "ID"
+      },
+      {
+         "value": "option13",
+         "label": "IL"
+      },
+      {
+         "value": "option14",
+         "label": "IN"
+      },
+      {
+         "value": "option15",
+         "label": "IA"
+      },
+      {
+         "value": "option16",
+         "label": "KS"
+      },
+      {
+         "value": "option17",
+         "label": "KY"
+      },
+      {
+         "value": "option18",
+         "label": "LA"
+      },
+      {
+         "value": "option19",
+         "label": "ME"
+      },
+      {
+         "value": "option20",
+         "label": "MD"
+      },
+      {
+         "value": "option21",
+         "label": "MA"
+      },
+      {
+         "value": "option22",
+         "label": "MI"
+      },
+      {
+         "value": "option23",
+         "label": "MN"
+      },
+      {
+         "value": "option24",
+         "label": "MS"
+      },
+      {
+         "value": "option25",
+         "label": "MO"
+      },
+      {
+         "value": "option26",
+         "label": "MT"
+      },
+      {
+         "value": "option27",
+         "label": "NE"
+      },
+      {
+         "value": "option28",
+         "label": "NV"
+      },
+      {
+         "value": "option29",
+         "label": "NH"
+      },
+      {
+         "value": "option30",
+         "label": "NJ"
+      },
+      {
+         "value": "option31",
+         "label": "NM"
+      },
+      {
+         "value": "option32",
+         "label": "NY"
+      },
+      {
+         "value": "option33",
+         "label": "NC"
+      },
+      {
+         "value": "option34",
+         "label": "ND"
+      },
+      {
+         "value": "option35",
+         "label": "OH"
+      },
+      {
+         "value": "option36",
+         "label": "OK"
+      },
+      {
+         "value": "option37",
+         "label": "OR"
+      },
+      {
+         "value": "option38",
+         "label": "PA"
+      },
+      {
+         "value": "option39",
+         "label": "RI"
+      },
+      {
+         "value": "option40",
+         "label": "SC"
+      },
+      {
+         "value": "option41",
+         "label": "SD"
+      },
+      {
+         "value": "option42",
+         "label": "TN"
+      },
+      {
+         "value": "option43",
+         "label": "TX"
+      },
+      {
+         "value": "option44",
+         "label": "UT"
+      },
+      {
+         "value": "option45",
+         "label": "VT"
+      },
+      {
+         "value": "option46",
+         "label": "VA"
+      },
+      {
+         "value": "option47",
+         "label": "WA"
+      },
+      {
+         "value": "option48",
+         "label": "WV"
+      },
+      {
+         "value": "option49",
+         "label": "WI"
+      },
+      {
+         "value": "option50",
+         "label": "WY"
+      }
    ]
 }
