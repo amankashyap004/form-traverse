@@ -9,7 +9,7 @@ import ContactInfoData from "./contactInformation/ContactInfoData";
 import ServiceAddressData from "./serviceAddress/ServiceAddressData";
 import TotalPrice from "./TotalPrice";
 import {
-   getSelectedOptionLabel,
+   getSelectedOptionData,
    getSelectedBoxData,
    getSelectedDateData,
    getSelectedTimingData,
@@ -17,7 +17,7 @@ import {
 } from "../../store/selectors/selectors";
 
 const BookingSummary = () => {
-   const selectedOptionLabel = useSelector(getSelectedOptionLabel);
+   const selectedOptionData = useSelector(getSelectedOptionData);
    const selectedBoxData = useSelector(getSelectedBoxData);
    const selectedDateData = useSelector(getSelectedDateData);
    const selectedTimeData = useSelector(getSelectedTimingData);
@@ -41,7 +41,7 @@ const BookingSummary = () => {
          <div className="flex justify-start items-start flex-col py-4">
             <div className="flex justify-start items-center py-1">
                <HouseOutlinedIcon sx={{ fontSize: 40 }} />
-               <p className="ml-2 text-base font-semibold">{selectedOptionLabel}</p>
+               <p className="ml-2 text-base font-semibold">{selectedOptionData.label}</p>
             </div>
             <div className="flex justify-start items-center py-1">
                <CottageOutlinedIcon sx={{ fontSize: 35 }} />

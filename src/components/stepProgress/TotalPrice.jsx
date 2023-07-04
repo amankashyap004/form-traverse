@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import {
+   getSelectedOptionData,
    getSelectedBoxPrice,
-   getSelectedOptionPrice,
    getSelectedServiceFrequencyOffer,
 } from "../../store/selectors/selectors";
 
 const TotalPrice = ({ totalPriceOfSelectedMultiOptions }) => {
-   const selectedOptionPrice = useSelector(getSelectedOptionPrice);
-   const parsedSelectedOptionPrice = parseInt(selectedOptionPrice.toString().slice(1));
+   const selectedOptionData = useSelector(getSelectedOptionData);
+   const selectedOptionDataPrice = selectedOptionData.price;
+   const [parsedSelectedOptionPrice, setParsedSelectedOptionPrice] = useState(0);
+
+   useEffect(() => {
+      if (selectedOptionDataPrice) {
+         setParsedSelectedOptionPrice(parseInt(selectedOptionData.price.toString().slice(1)));
+      }
+   }, [selectedOptionDataPrice]);
 
    const selectedBoxPrice = useSelector(getSelectedBoxPrice);
    const parsedSelectedBoxPrice = parseInt(selectedBoxPrice.toString().slice(1));

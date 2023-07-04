@@ -1,31 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import CustomDropdown from "../../CustomDropdown";
 import MultiSelectDropdown from "../../MultiSelectDropdown";
-import { getSelectedOptionLabel } from "../../../store/selectors/selectors";
 import HouseDetails from "./HouseDetails";
 import ExtraServiceDetails from "./ExtraServiceDetails";
 import data from "../../../data.json";
-import {
-   setMultiOptions,
-   setSelectedOptionLabel,
-   setSelectedOptionPrice,
-} from "../../../store/actions/actions";
+import { setSelectedOptionData, setMultiOptions } from "../../../store/actions/actions";
 
 const ServiceDetails = () => {
    const dispatch = useDispatch();
    const dropdownOptions = data.dropdownOptions;
 
-   const selectedOptionLabel = useSelector(getSelectedOptionLabel);
-
    const handleDropdownChange = (option) => {
-      dispatch(setSelectedOptionLabel(option.label));
-      dispatch(setSelectedOptionPrice(option.price));
+      dispatch(setSelectedOptionData(option));
    };
 
    useEffect(() => {
-      dispatch(setSelectedOptionLabel(dropdownOptions[0].label));
-      dispatch(setSelectedOptionPrice(dropdownOptions[0].price));
+      dispatch(setSelectedOptionData(dropdownOptions[0]));
    }, []);
 
    const dropdownMultiSelectOptions = data.dropdownMultiSelectOptions;

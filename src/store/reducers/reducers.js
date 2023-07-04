@@ -1,6 +1,5 @@
 const initialState = {
-   selectedOptionLabel: "",
-   selectedOptionPrice: 0,
+   selectedOptionData: [],
    selectedBoxData: "",
    selectedBoxPrice: 0,
    selectedMultiOptions: [],
@@ -15,15 +14,10 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
    switch (action.type) {
-      case "SET_SELECTED_OPTION_LABEL":
+      case "SET_SELECTED_OPTION_DATA":
          return {
             ...state,
-            selectedOptionLabel: action.payload,
-         };
-      case "SET_SELECTED_OPTION_PRICE":
-         return {
-            ...state,
-            selectedOptionPrice: action.payload,
+            selectedOptionData: action.payload,
          };
       case "SET_SELECTED_BOX_DATA":
          return {

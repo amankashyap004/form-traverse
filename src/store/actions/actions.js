@@ -1,14 +1,7 @@
-export const setSelectedOptionLabel = (selectedOptionLabel) => {
+export const setSelectedOptionData = (selectedOptionData) => {
    return {
-      type: "SET_SELECTED_OPTION_LABEL",
-      payload: selectedOptionLabel,
-   };
-};
-
-export const setSelectedOptionPrice = (selectedOptionPrice) => {
-   return {
-      type: "SET_SELECTED_OPTION_PRICE",
-      payload: selectedOptionPrice,
+      type: "SET_SELECTED_OPTION_DATA",
+      payload: selectedOptionData,
    };
 };
 
