@@ -55,7 +55,7 @@ const CardInfo = () => {
          <div className="grid grid-cols-3 w-full my-3">
             <CustomizeInput
                type="text"
-               placeholder="1234 1234 1234"
+               placeholder="1234 1234 1234 1234"
                name="cardNumber"
                value={formData.cardNumber}
                onChange={handleInputChange}

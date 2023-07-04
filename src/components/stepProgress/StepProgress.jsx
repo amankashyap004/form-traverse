@@ -20,6 +20,14 @@ const StepProgress = () => {
       }
    };
 
+   const handleSaveQuote = () => {
+      console.log("Save Quote");
+   };
+
+   const handleBookNow = () => {
+      console.log("Book Now");
+   };
+
    return (
       <section className="flex justify-start items-start flex-col relative w-full">
          <div className="h-0.5 bg-slate-200 w-[10rem] top-4 left-2 absolute"></div>
@@ -59,13 +67,13 @@ const StepProgress = () => {
                      extraStyle="bg-blue-950 ml-4 text-white"
                      contained="Save Quote"
                      disabled={activeStep !== 4}
-                     onClick={handleNextStep}
+                     onClick={handleSaveQuote}
                   />
                   <Button
                      extraStyle={"bg-green-700 ml-4 text-white"}
                      contained="Book Now"
                      disabled={activeStep !== 4}
-                     onClick={handleNextStep}
+                     onClick={handleBookNow}
                   />
                </div>
             )}
