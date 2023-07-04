@@ -13,7 +13,7 @@ import {
    getSelectedBoxData,
    getSelectedDateData,
    getSelectedTimingData,
-   getSelectedServiceFrequencyData,
+   getServiceFrequencyData,
 } from "../../store/selectors/selectors";
 
 const BookingSummary = () => {
@@ -21,7 +21,7 @@ const BookingSummary = () => {
    const selectedBoxData = useSelector(getSelectedBoxData);
    const selectedDateData = useSelector(getSelectedDateData);
    const selectedTimeData = useSelector(getSelectedTimingData);
-   const selectedServiceFrequency = useSelector(getSelectedServiceFrequencyData);
+   const serviceFrequencyData = useSelector(getServiceFrequencyData);
 
    const [totalPriceOfSelectedMultiOptions, setTotalPriceOfSelectedMultiOptions] = useState(0);
 
@@ -58,7 +58,7 @@ const BookingSummary = () => {
             <div className="flex justify-start items-center py-1">
                <CleaningServicesIcon sx={{ fontSize: 35 }} />
                <p className="ml-2 text-base font-semibold">
-                  {selectedServiceFrequency ? selectedServiceFrequency : "Service frequency"}
+                  {serviceFrequencyData.label ? serviceFrequencyData.label : "Service frequency"}
                </p>
             </div>
          </div>

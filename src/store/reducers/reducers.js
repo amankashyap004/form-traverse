@@ -1,13 +1,10 @@
 const initialState = {
    selectedOptionData: [],
    selectedBoxData: [],
-   // selectedBoxData: "",
-   // selectedBoxPrice: 0,
    selectedMultiOptions: [],
    selectedDateData: "",
    selectedTimeData: "",
-   selectedServiceFrequency: "",
-   selectedServiceFrequencyOffer: "",
+   serviceFrequencyData: [],
    infoFormData: [],
    serviceFormData: [],
    cardInfoData: [],
@@ -40,15 +37,10 @@ const reducer = (state = initialState, action) => {
             ...state,
             selectedTimeData: action.payload,
          };
-      case "SET_SELECTED_SERVICE_FREQUENCY_DATA":
+      case "SET_SERVICE_FREQUENCY_DATA":
          return {
             ...state,
-            selectedServiceFrequency: action.payload,
-         };
-      case "SET_SELECTED_SERVICE_FREQUENCY_OFFER":
-         return {
-            ...state,
-            selectedServiceFrequencyOffer: action.payload,
+            serviceFrequencyData: action.payload,
          };
       case "SET_INFO_FORM_DATA":
          return {

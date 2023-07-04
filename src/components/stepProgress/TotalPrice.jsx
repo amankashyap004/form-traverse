@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import {
    getSelectedOptionData,
    getSelectedBoxData,
-   getSelectedServiceFrequencyOffer,
+   getServiceFrequencyData,
 } from "../../store/selectors/selectors";
 
 const TotalPrice = ({ totalPriceOfSelectedMultiOptions }) => {
@@ -27,7 +27,8 @@ const TotalPrice = ({ totalPriceOfSelectedMultiOptions }) => {
       }
    }, [selectedBoxPrice]);
 
-   const selectedServiceFrequencyOffer = useSelector(getSelectedServiceFrequencyOffer);
+   const serviceFrequencyData = useSelector(getServiceFrequencyData);
+   const serviceFrequencyOffer = serviceFrequencyData.offer;
 
    const totalPrice = () => {
       let total = 0;
@@ -39,15 +40,15 @@ const TotalPrice = ({ totalPriceOfSelectedMultiOptions }) => {
 
    const calculateTotalPrice = () => {
       let total = totalPrice();
-      if (selectedServiceFrequencyOffer !== "") {
-         let discountType = selectedServiceFrequencyOffer.includes("%") ? "PERCENT" : "DIRECT";
+      if (serviceFrequencyOffer !== "" && serviceFrequencyOffer !== undefined) {
+         let discountType = serviceFrequencyOffer.includes("%") ? "PERCENT" : "DIRECT";
          let discountValue = 0;
          if (discountType === "PERCENT") {
-            discountValue = selectedServiceFrequencyOffer.replace("%", "");
+            discountValue = serviceFrequencyOffer.replace("%", "");
             discountValue = parseFloat(discountValue);
             total = total - (total * discountValue) / 100;
          } else if (discountType === "DIRECT") {
-            discountValue = selectedServiceFrequencyOffer.replace("$", "");
+            discountValue = serviceFrequencyOffer.replace("$", "");
             discountValue = parseFloat(discountValue);
             total = total - discountValue;
          }

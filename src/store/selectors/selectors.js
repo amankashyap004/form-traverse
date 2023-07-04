@@ -6,8 +6,7 @@ export const getSelectedDateData = (state) => state.selectedDateData;
 
 export const getSelectedTimingData = (state) => state.selectedTimeData;
 
-export const getSelectedServiceFrequencyData = (state) => state.selectedServiceFrequency;
-export const getSelectedServiceFrequencyOffer = (state) => state.selectedServiceFrequencyOffer;
+export const getServiceFrequencyData = (state) => state.serviceFrequencyData;
 
 export const getInfoFormData = (state) => state.infoFormData;
 

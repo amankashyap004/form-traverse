@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import CustomDropdown from "../../CustomDropdown";
 import CustomDatePicker from "../../CustomDatePicker";
 import {
    setSelectedDateData,
    setSelectedTimingData,
-   setSelectedServiceFrequencyData,
-   setSelectedServiceFrequencyOffer,
+   setServiceFrequencyData,
 } from "../../../store/actions/actions";
 import data from "../../../data.json";
 
@@ -24,9 +23,12 @@ const ExtraServiceDetails = () => {
    };
 
    const handleDropdownServiceFrequency = (option) => {
-      dispatch(setSelectedServiceFrequencyData(option.label));
-      dispatch(setSelectedServiceFrequencyOffer(option.offer));
+      dispatch(setServiceFrequencyData(option));
    };
+
+   // useEffect(() => {
+   //    dispatch(setServiceFrequencyData(serviceFrequencyData[0]));
+   // }, []);
 
    return (
       <section className="flex justify-center items-center w-full">
