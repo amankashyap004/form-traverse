@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import BasicBox from "../../BasicBox";
-import { setSelectedBoxData, setSelectedBoxPrice } from "../../../store/actions/actions";
+import { setSelectedBoxData } from "../../../store/actions/actions";
 import data from "../../../data.json";
 
 const HouseDetails = () => {
@@ -11,13 +11,11 @@ const HouseDetails = () => {
 
    const handleBoxClick = (data) => {
       setSelectedBox(data);
-      dispatch(setSelectedBoxData(data.label));
-      dispatch(setSelectedBoxPrice(data.price));
+      dispatch(setSelectedBoxData(data));
    };
 
    useEffect(() => {
-      dispatch(setSelectedBoxData(dataOfHouseDetails[0].label));
-      dispatch(setSelectedBoxPrice(dataOfHouseDetails[0].price));
+      dispatch(setSelectedBoxData(dataOfHouseDetails[0]));
    }, []);
 
    return (

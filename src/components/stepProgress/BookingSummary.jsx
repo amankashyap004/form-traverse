@@ -45,7 +45,7 @@ const BookingSummary = () => {
             </div>
             <div className="flex justify-start items-center py-1">
                <CottageOutlinedIcon sx={{ fontSize: 35 }} />
-               <p className="ml-2 text-base font-semibold">{selectedBoxData}</p>
+               <p className="ml-2 text-base font-semibold">{selectedBoxData.label}</p>
             </div>
             <div className="flex justify-start items-center py-1">
                <CalendarMonthIcon sx={{ fontSize: 35 }} />

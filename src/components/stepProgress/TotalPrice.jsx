@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import {
    getSelectedOptionData,
-   getSelectedBoxPrice,
+   getSelectedBoxData,
    getSelectedServiceFrequencyOffer,
 } from "../../store/selectors/selectors";
 
@@ -13,12 +13,19 @@ const TotalPrice = ({ totalPriceOfSelectedMultiOptions }) => {
 
    useEffect(() => {
       if (selectedOptionDataPrice) {
-         setParsedSelectedOptionPrice(parseInt(selectedOptionData.price.toString().slice(1)));
+         setParsedSelectedOptionPrice(parseInt(selectedOptionDataPrice.toString().slice(1)));
       }
    }, [selectedOptionDataPrice]);
 
-   const selectedBoxPrice = useSelector(getSelectedBoxPrice);
-   const parsedSelectedBoxPrice = parseInt(selectedBoxPrice.toString().slice(1));
+   const selectedBoxData = useSelector(getSelectedBoxData);
+   const selectedBoxPrice = selectedBoxData.price;
+   const [parsedSelectedBoxPrice, setParsedSelectedBoxPrice] = useState(0);
+
+   useEffect(() => {
+      if (selectedBoxPrice) {
+         setParsedSelectedBoxPrice(parseInt(selectedBoxPrice.toString().slice(1)));
+      }
+   }, [selectedBoxPrice]);
 
    const selectedServiceFrequencyOffer = useSelector(getSelectedServiceFrequencyOffer);
 
