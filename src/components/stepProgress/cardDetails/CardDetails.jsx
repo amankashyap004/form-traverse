@@ -1,4 +1,6 @@
 import React from "react";
+import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
+import PriceCheckIcon from "@mui/icons-material/PriceCheck";
 
 const CardDetails = () => {
    return (
@@ -9,6 +11,18 @@ const CardDetails = () => {
                You may book now by entering your card details or leave blank and save quote for
                later.
             </span>
+         </div>
+         <div className=" flex justify-start items-center my-4">
+            <div className="mr-2">
+               <VerifiedUserIcon sx={{ fontSize: 35 }} />
+            </div>
+            <span className="text-xl text-slate-500 my-4">
+               Guaranteed <span className="text-black font-semibold">safe & secure</span> checkout
+            </span>
+            <div className="flex justify-center items-center bg-slate-900 text-slate-300 text-xs rounded-md px-3 py-1 mx-2">
+               <PriceCheckIcon fontSize="small" />
+               <span className="mx-1">Payment</span>
+            </div>
          </div>
          <div className=" flex justify-start items-start flex-col">
             <span className="text-lg font-extrabold my-1">
