@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ServiceDetails from "./serviceDetails/ServiceDetails";
 import ContactInformation from "./contactInformation/ContactInformation";
 import ServiceAddress from "./serviceAddress/ServiceAddress";
+import CardDetails from "./cardDetails/CardDetails";
 import Button from "../Button";
 
 const StepProgress = () => {
@@ -35,6 +36,7 @@ const StepProgress = () => {
             {activeStep === 1 && <ServiceDetails />}
             {activeStep === 2 && <ContactInformation />}
             {activeStep === 3 && <ServiceAddress />}
+            {activeStep === 4 && <CardDetails />}
          </div>
          <div className="flex justify-between items-center mt-4 w-full">
             <Button contained="Back" disabled={activeStep === 1} onClick={handlePreviousStep} />
