@@ -1,6 +1,7 @@
 import React from "react";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import PriceCheckIcon from "@mui/icons-material/PriceCheck";
+import CardInfo from "./CardInfo";
 
 const CardDetails = () => {
    return (
@@ -12,6 +13,9 @@ const CardDetails = () => {
                later.
             </span>
          </div>
+         <div>
+            <CardInfo />
+         </div>
          <div className=" flex justify-start items-center my-4">
             <div className="mr-2">
                <VerifiedUserIcon sx={{ fontSize: 35 }} />
@@ -21,7 +25,7 @@ const CardDetails = () => {
             </span>
             <div className="flex justify-center items-center bg-slate-900 text-slate-300 text-xs rounded-md px-3 py-1 mx-2">
                <PriceCheckIcon fontSize="small" />
-               <span className="mx-1">Payment</span>
+               <span className="mx-1 uppercase">Payment</span>
             </div>
          </div>
          <div className=" flex justify-start items-start flex-col">
