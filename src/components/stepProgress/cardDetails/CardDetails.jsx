@@ -10,6 +10,27 @@ const CardDetails = () => {
                later.
             </span>
          </div>
+         <div className=" flex justify-start items-start flex-col">
+            <span className="text-lg font-extrabold my-1">
+               BEFORE CLICKING BOOK NOW PLEASE REVIEW THESE TERMS CAREFULLY.{" "}
+            </span>
+            <span className="text-base my-1 text-slate-500">
+               By clicking <span className="text-black font-semibold">BOOK NOW</span>, I agree that
+               my booking reflects the actual size/condition of the above property/home. Pro
+               Housekeepers RESERVES the right to ADJUST pricing to include any extra costs. I also
+               understand that there will be a non-refundable $75 fee and possible cancellation for
+               insect/rodent issues, hoarding, and/or having other workers present during service.
+            </span>
+            <span className="text-base my-1 text-slate-500">
+               <span className="text-black font-semibold">I AGREE TO REVIEW ALL WORK</span> WHILE
+               THE SERVICE IS BEING DONE AT THE
+            </span>
+            <span className="text-base my-1 text-slate-500">
+               <span className="text-black font-semibold">I UNDERSTAND</span> THAT MAKING ANY CLAIMS
+               ABOUT THE SERVICE AFTER WE'VE LEFT THE PROPERTY IS UNACCEPTABLE AND NO REFUNDS,
+               CREDITS OR ADDITIONAL SERVICES WILL BE PROVIDED.
+            </span>
+         </div>
       </section>
    );
 };
