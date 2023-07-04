@@ -39,8 +39,36 @@ const StepProgress = () => {
             {activeStep === 4 && <CardDetails />}
          </div>
          <div className="flex justify-between items-center mt-4 w-full">
-            <Button contained="Back" disabled={activeStep === 1} onClick={handlePreviousStep} />
-            <Button contained="Next Step" disabled={activeStep === 4} onClick={handleNextStep} />
+            <Button
+               extraStyle={"bg-yellow-400 text-slate-900"}
+               contained="Back"
+               disabled={activeStep === 1}
+               onClick={handlePreviousStep}
+            />
+            {activeStep !== 4 && (
+               <Button
+                  extraStyle={"bg-blue-800 text-white"}
+                  contained="Next Step"
+                  disabled={activeStep === 4}
+                  onClick={handleNextStep}
+               />
+            )}
+            {activeStep === 4 && (
+               <div className="flex justify-end items-center w-full">
+                  <Button
+                     extraStyle="bg-blue-950 ml-4 text-white"
+                     contained="Save Quote"
+                     disabled={activeStep !== 4}
+                     onClick={handleNextStep}
+                  />
+                  <Button
+                     extraStyle={"bg-green-700 ml-4 text-white"}
+                     contained="Book Now"
+                     disabled={activeStep !== 4}
+                     onClick={handleNextStep}
+                  />
+               </div>
+            )}
          </div>
       </section>
    );

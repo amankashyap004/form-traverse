@@ -1,11 +1,11 @@
 import React from "react";
 
-const Button = ({ contained, disabled, onClick }) => {
+const Button = ({ contained, disabled, onClick, extraStyle }) => {
    return (
       <button
-         className={`px-20 py-3 font-semibold text-base rounded-full bg-blue-950 text-white uppercase cursor-pointer ${
+         className={`px-16 py-3 font-semibold text-base rounded-full uppercase cursor-pointer ${
             disabled ? "opacity-30 text-slate-500" : ""
-         }  ${contained === "Back" ? "bg-yellow-400 text-slate-900" : ""} `}
+         } ${extraStyle ? extraStyle : ""}`}
          disabled={disabled}
          onClick={onClick}
       >
