@@ -10,6 +10,7 @@ const initialState = {
    selectedServiceFrequencyOffer: "",
    infoFormData: [],
    serviceFormData: [],
+   cardInfoData: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -68,6 +69,11 @@ const reducer = (state = initialState, action) => {
          return {
             ...state,
             serviceFormData: action.payload,
+         };
+      case "SET_CARD_INFO_DATA":
+         return {
+            ...state,
+            cardInfoData: action.payload,
          };
       default:
          return state;

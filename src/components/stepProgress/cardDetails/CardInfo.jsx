@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import CustomizeInput from "../../CustomizeInput";
+import { setCardInfoData } from "../../../store/actions/actions";
 
 const CardInfo = () => {
+   const dispatch = useDispatch();
+
    const [formData, setFormData] = useState({
       cardNumber: "",
       cardDate: "",
@@ -42,8 +46,9 @@ const CardInfo = () => {
          ...prevFormData,
          [name]: updatedValue,
       }));
+
+      dispatch(setCardInfoData({ ...formData, [name]: value }));
    };
-   //    console.log(formData);
 
    return (
       <form>

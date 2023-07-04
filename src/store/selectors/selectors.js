@@ -14,3 +14,5 @@ export const getSelectedServiceFrequencyOffer = (state) => state.selectedService
 export const getInfoFormData = (state) => state.infoFormData;
 
 export const getServiceFormData = (state) => state.serviceFormData;
+
+export const getCardInfoData = (state) => state.cardInfoData;

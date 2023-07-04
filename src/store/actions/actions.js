@@ -74,3 +74,10 @@ export const setServiceFormData = (serviceFormData) => {
       payload: serviceFormData,
    };
 };
+
+export const setCardInfoData = (cardInfoData) => {
+   return {
+      type: "SET_CARD_INFO_DATA",
+      payload: cardInfoData,
+   };
+};
