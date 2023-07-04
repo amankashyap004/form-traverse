@@ -14,7 +14,7 @@ const FormPage = ({ isFormPage, setIsFormPage }) => {
                >
                   <CloseIcon style={{ fontSize: "30px" }} />
                </section>
-               <section className="ml-12 mt-8 absolute w-[92%]">
+               <section className="ml-12 mt-8 pb-12 absolute w-[92%]">
                   <div className="flex justify-start items-start w-full">
                      <div className="w-[55%]">
                         <StepProgress />
