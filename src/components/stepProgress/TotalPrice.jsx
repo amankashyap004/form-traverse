@@ -11,21 +11,25 @@ const TotalPrice = ({ totalPriceOfSelectedMultiOptions }) => {
    const selectedOptionDataPrice = selectedOptionData.price;
    const [parsedSelectedOptionPrice, setParsedSelectedOptionPrice] = useState(0);
 
-   useEffect(() => {
-      if (selectedOptionDataPrice) {
-         setParsedSelectedOptionPrice(parseInt(selectedOptionDataPrice.toString().slice(1)));
-      }
-   }, [selectedOptionDataPrice]);
+   // useEffect(() => {
+   //    if (selectedOptionDataPrice) {
+   //       setParsedSelectedOptionPrice(parseInt(selectedOptionDataPrice.toString().slice(1)));
+   //    }
+   // }, [selectedOptionDataPrice]);
 
    const selectedBoxData = useSelector(getSelectedBoxData);
    const selectedBoxPrice = selectedBoxData.price;
    const [parsedSelectedBoxPrice, setParsedSelectedBoxPrice] = useState(0);
 
    useEffect(() => {
+      if (selectedOptionDataPrice) {
+         setParsedSelectedOptionPrice(parseInt(selectedOptionDataPrice.toString().slice(1)));
+      }
+
       if (selectedBoxPrice) {
          setParsedSelectedBoxPrice(parseInt(selectedBoxPrice.toString().slice(1)));
       }
-   }, [selectedBoxPrice]);
+   }, [selectedOptionDataPrice, selectedBoxPrice]);
 
    const serviceFrequencyData = useSelector(getServiceFrequencyData);
    const serviceFrequencyOffer = serviceFrequencyData.offer;
