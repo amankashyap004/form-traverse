@@ -40,7 +40,7 @@ const StepProgress = () => {
          <div className="mt-14 text-slate-500 text-sm">
             <StepParagraph activeStep={activeStep} />
          </div>
-         <div className="mt-4 w-full">
+         <div className="mt-4 w-full sm:mt-1">
             {activeStep === 1 && <ServiceDetails />}
             {activeStep === 2 && <ContactInformation />}
             {activeStep === 3 && <ServiceAddress />}
@@ -64,13 +64,13 @@ const StepProgress = () => {
             {activeStep === 4 && (
                <div className="flex justify-end items-center w-full">
                   <Button
-                     extraStyle="bg-blue-950 ml-4 text-white"
+                     extraStyle="bg-blue-950 ml-4 text-white sm:ml-2"
                      contained="Save Quote"
                      disabled={activeStep !== 4}
                      onClick={handleSaveQuote}
                   />
                   <Button
-                     extraStyle={"bg-green-700 ml-4 text-white"}
+                     extraStyle={"bg-green-700 ml-4 text-white sm:ml-2"}
                      contained="Book Now"
                      disabled={activeStep !== 4}
                      onClick={handleBookNow}
