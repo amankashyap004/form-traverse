@@ -42,14 +42,16 @@ const ContactInformation = () => {
    return (
       <section>
          <div className=" flex justify-start items-start flex-col">
-            <span className="text-4xl font-extrabold my-4">Your Contact Details</span>
-            <span className="text-lg font-bold my-2">
+            <span className="text-4xl font-extrabold my-4 sm:text-3xl sm:my-2">
+               Your Contact Details
+            </span>
+            <span className="text-lg font-bold my-2 sm:text-base">
                Please provide your name, phone number and email
             </span>
          </div>
          <form>
             <div className="flex justify-center items-center flex-col w-full">
-               <div className="grid grid-cols-2 w-full">
+               <div className="grid grid-cols-2 w-full sm:grid-cols-1">
                   <CustomizeInput
                      type="text"
                      placeholder="First Name"

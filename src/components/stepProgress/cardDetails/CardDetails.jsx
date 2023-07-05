@@ -7,7 +7,9 @@ const CardDetails = () => {
    return (
       <section>
          <div className=" flex justify-start items-start flex-col">
-            <span className="text-4xl font-extrabold my-4">Book Now or Save Quote</span>
+            <span className="text-4xl font-extrabold my-4 sm:text-3xl sm:my-2">
+               Book Now or Save Quote
+            </span>
             <span className="text-base font-semibold my-2">
                You may book now by entering your card details or leave blank and save quote for
                later.
@@ -20,7 +22,7 @@ const CardDetails = () => {
             <div className="mr-2">
                <VerifiedUserIcon sx={{ fontSize: 35 }} />
             </div>
-            <span className="text-xl text-slate-500 my-4">
+            <span className="text-xl text-slate-500 my-4 sm:text-base">
                Guaranteed <span className="text-black font-semibold">safe & secure</span> checkout
             </span>
             <div className="flex justify-center items-center bg-slate-900 text-slate-300 text-xs rounded-md px-3 py-1 mx-2">
@@ -28,8 +30,8 @@ const CardDetails = () => {
                <span className="mx-1 uppercase">Payment</span>
             </div>
          </div>
-         <div className=" flex justify-start items-start flex-col">
-            <span className="text-lg font-extrabold my-1">
+         <div className="flex justify-start items-start flex-col">
+            <span className="text-lg font-extrabold my-1 sm:text-base">
                BEFORE CLICKING BOOK NOW PLEASE REVIEW THESE TERMS CAREFULLY.{" "}
             </span>
             <span className="text-base my-1 text-slate-500">

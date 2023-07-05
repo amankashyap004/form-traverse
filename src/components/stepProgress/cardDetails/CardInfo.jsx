@@ -52,7 +52,7 @@ const CardInfo = () => {
 
    return (
       <form>
-         <div className="grid grid-cols-3 w-full my-3">
+         <div className="grid grid-cols-3 w-full my-3 sm:grid-cols-1 sm:my-2">
             <CustomizeInput
                type="text"
                placeholder="1234 1234 1234 1234"

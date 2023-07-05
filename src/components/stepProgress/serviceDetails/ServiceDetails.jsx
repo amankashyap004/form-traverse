@@ -29,7 +29,7 @@ const ServiceDetails = () => {
 
    return (
       <section>
-         <h1 className="text-4xl font-extrabold my-4 sm:text-3xl">Your Booking Details</h1>
+         <h1 className="text-4xl font-extrabold my-4 sm:text-3xl sm:my-2">Your Booking Details</h1>
          <h3 className="text-lg font-bold my-2 sm:text-base">
             Choose service type, home size and other details
          </h3>
