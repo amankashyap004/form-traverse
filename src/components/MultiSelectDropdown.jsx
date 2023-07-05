@@ -56,7 +56,7 @@ const MultiSelectDropdown = ({ options, onChange }) => {
             <div
                className={`transform transition-transform ${
                   dropdownOpen ? "rotate-180" : ""
-               } absolute top-4 right-4`}
+               } absolute top-4 right-4 sm:top-2 sm:right-2`}
             >
                <ExpandMoreIcon />
             </div>

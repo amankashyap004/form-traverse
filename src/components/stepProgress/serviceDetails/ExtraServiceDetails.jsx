@@ -31,13 +31,13 @@ const ExtraServiceDetails = () => {
    // }, []);
 
    return (
-      <section className="flex justify-center items-center w-full">
+      <section className="flex justify-center items-center w-full sm:flex-col">
          {/* Select Date */}
-         <div className="mb-4 w-1/3 mr-3">
+         <div className="mb-4 w-1/3 mr-3 sm:w-full sm:mr-0">
             <CustomDatePicker onDateSelect={handleDateSelect} />
          </div>
          {/* Timing */}
-         <div className="mb-4 w-1/3 mr-3">
+         <div className="mb-4 w-1/3 mr-3 sm:w-full sm:mr-0">
             <CustomDropdown
                options={timingData}
                onChange={handleDropdownChangeTiming}
@@ -45,7 +45,7 @@ const ExtraServiceDetails = () => {
             />
          </div>
          {/* Service Frequency */}
-         <div className="mb-4 w-1/3">
+         <div className="mb-4 w-1/3 sm:w-full sm:mr-0">
             <CustomDropdown
                options={serviceFrequencyData}
                onChange={handleDropdownServiceFrequency}

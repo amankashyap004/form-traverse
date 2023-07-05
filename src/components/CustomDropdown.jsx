@@ -35,7 +35,7 @@ const CustomDropdown = ({ options, defaultValue, onChange }) => {
                {options.map((option) => (
                   <div
                      key={option.value}
-                     className="p-2 hover:text-blue-500 cursor-pointer"
+                     className="p-2 hover:text-blue-500 cursor-pointer sm:p-1"
                      onClick={() => handleOptionClick(option)}
                   >
                      {option.label}

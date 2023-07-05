@@ -19,7 +19,7 @@ const HouseDetails = () => {
    }, []);
 
    return (
-      <div className="flex justify-start items-center">
+      <div className="flex justify-start items-center sm:grid sm:grid-cols-3 sm:gap-2">
          {dataOfHouseDetails.map((data) => (
             <BasicBox
                key={data.key}
