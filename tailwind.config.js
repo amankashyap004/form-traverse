@@ -4,8 +4,8 @@ export default {
    theme: {
       extend: {},
       screens: {
-         md: { max: "800px" },
-         sm: { max: "600px" },
+         md: { max: "950px" },
+         sm: { max: "650px" },
       },
    },
    plugins: [],
