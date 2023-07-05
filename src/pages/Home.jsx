@@ -6,8 +6,8 @@ const Home = () => {
    const [isFormPage, setIsFormPage] = useState(false);
 
    return (
-      <main className="m-4">
-         <section className="flex justify-between items-start sm:flex-col">
+      <main>
+         <section className="flex justify-between items-start m-4 sm:flex-col">
             <section className="flex justify-center items-center flex-col p-4 w-1/2 sm:w-full sm:p-2">
                <div className="pb-4 sm:pb-2">
                   <p className="text-lg font-bold text-slate-700 sm:text-base">
