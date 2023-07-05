@@ -12,7 +12,7 @@ const Header = () => {
             <Typography variant="h6" className="text-black">
                Form Traverse
             </Typography>
-            <div className="flex ml-auto">
+            <div className="flex ml-auto sm:hidden">
                {navItems.map((item) => (
                   <Typography
                      key={item}

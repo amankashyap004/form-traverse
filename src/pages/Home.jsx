@@ -7,20 +7,20 @@ const Home = () => {
 
    return (
       <main className="m-4">
-         <section className="flex justify-between items-center">
-            <section className="flex justify-center items-center flex-col p-4 w-1/2">
-               <div className="pb-4">
-                  <p className="text-lg font-bold text-slate-700 ">
+         <section className="flex justify-between items-start sm:flex-col">
+            <section className="flex justify-center items-center flex-col p-4 w-1/2 sm:w-full sm:p-2">
+               <div className="pb-4 sm:pb-2">
+                  <p className="text-lg font-bold text-slate-700 sm:text-base">
                      Unlock the door to a seamless online experience with Form Traverse, where form
                      filling becomes a journey of simplicity and efficiency.
                   </p>
                </div>
-               <div className="mt-8" onClick={() => setIsFormPage(!isFormPage)}>
+               <div className="mt-8 sm:mt-2" onClick={() => setIsFormPage(!isFormPage)}>
                   <BasicBtn contained="BOOKING CLEANING" />
                </div>
             </section>
-            <div className="p-4 w-1/2">
-               <p className="text-base font-semibold text-slate-500 text-justify">
+            <div className="p-4 w-1/2 sm:w-full sm:p-2">
+               <p className="text-base font-semibold text-slate-500 text-justify sm:text-sm">
                   Form Traverse is a modern and intuitive multi-step form system I have built using
                   React. With Form Traverse, I aim to enhance the user experience of form filling by
                   breaking down lengthy or complex forms into manageable sections. By dividing the
