@@ -1,6 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setMultiOptions } from "../../../store/actions/actions";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 const MoreMultiOptions = () => {
    const dispatch = useDispatch();
@@ -41,20 +43,16 @@ const MoreMultiOptions = () => {
                      {option.quantity !== undefined && (
                         <div className="flex justify-start items-center p-2 text-base font-bold">
                            <span>{option.label}</span>
-                           <div className="p-1 ml-2 border border-slate-400 rounded-lg">
-                              <span
+                           <div className="flex justify-center items-center p-1 ml-2 border border-slate-400 rounded-lg">
+                              <KeyboardArrowLeftIcon
+                                 className="cursor-pointer"
                                  onClick={() => handleClick(option, "subtract")}
-                                 className="px-2 font-extrabold text-xl cursor-pointer"
-                              >
-                                 {"-"}
-                              </span>
+                              />
                               <span>{option.quantity}</span>
-                              <span
+                              <KeyboardArrowRightIcon
+                                 className="cursor-pointer"
                                  onClick={() => handleClick(option, "add")}
-                                 className="px-2 font-extrabold text-xl cursor-pointer"
-                              >
-                                 {"+"}
-                              </span>
+                              />
                            </div>
                         </div>
                      )}
