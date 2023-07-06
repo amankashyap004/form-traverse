@@ -100,22 +100,26 @@
       {
          "value": "option5",
          "label": "Residents 15+ miles from city center (select 1 per 15 miles)",
-         "price": "$20"
+         "price": "$20",
+         "quantity": "1"
       },
       {
          "value": "option6",
          "label": "Additional Bathrooms (2 included by default)",
-         "price": "$20"
+         "price": "$20",
+         "quantity": "1"
       },
       {
          "value": "option7",
          "label": "Additional Bedrooms",
-         "price": "$15"
+         "price": "$15",
+         "quantity": "1"
       },
       {
          "value": "option8",
          "label": "Additional Sq. Footage (1 = 500 sq ft.)",
-         "price": "$35"
+         "price": "$35",
+         "quantity": "1"
       },
       {
          "value": "option9",
