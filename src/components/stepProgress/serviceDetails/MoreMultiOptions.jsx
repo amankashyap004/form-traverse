@@ -37,7 +37,7 @@ const MoreMultiOptions = () => {
    return (
       <>
          {shouldRenderComponent && (
-            <div>
+            <div className="my-2">
                {multiOptions.map((option) => (
                   <div key={option.value}>
                      {option.quantity !== undefined && (
