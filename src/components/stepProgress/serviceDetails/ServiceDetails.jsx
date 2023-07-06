@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import CustomDropdown from "../../CustomDropdown";
 import MultiSelectDropdown from "../../MultiSelectDropdown";
+import MoreMultiOptions from "./MoreMultiOptions";
 import HouseDetails from "./HouseDetails";
 import ExtraServiceDetails from "./ExtraServiceDetails";
 import data from "../../../data.json";
@@ -45,6 +46,7 @@ const ServiceDetails = () => {
                   options={dropdownMultiSelectOptions}
                   onChange={handleSelectedOptionsChange}
                />
+               <MoreMultiOptions />
             </div>
             <div className="mb-4">
                <ExtraServiceDetails />
