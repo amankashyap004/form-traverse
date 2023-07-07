@@ -22,6 +22,7 @@ const MultiSelectDropdown = ({ options, onChange }) => {
       }
 
       setSelectedOptions(updatedOptions);
+      setDropdownOpen(false);
       onChange(updatedOptions);
    };
 
