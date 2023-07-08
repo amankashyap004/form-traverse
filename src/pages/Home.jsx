@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import BasicBtn from "../components/BasicBtn";
 import FormPage from "./FormPage";
 
@@ -12,7 +13,10 @@ const Home = () => {
                <div className="pb-4 sm:pb-2">
                   <p className="text-lg font-bold text-slate-700 sm:text-base">
                      Unlock the door to a seamless online experience with Form Traverse, where form
-                     filling becomes a journey of simplicity and efficiency.
+                     filling becomes a journey of simplicity and efficiency.{" "}
+                     <Link to={"/about"} className="text-blue-900 hover:underline">
+                        For more information
+                     </Link>{" "}
                   </p>
                </div>
                <div className="mt-8 sm:mt-2" onClick={() => setIsFormPage(!isFormPage)}>
