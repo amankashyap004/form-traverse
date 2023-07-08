@@ -15,7 +15,7 @@ const Header = () => {
       <AppBar position="static">
          <Toolbar className="bg-white">
             <Typography variant="h6" className="text-black">
-               Form Traverse
+               <Link to={"/"}>Form Traverse</Link>
             </Typography>
             <div className="flex ml-auto sm:hidden">
                {navItems.map((item) => (
