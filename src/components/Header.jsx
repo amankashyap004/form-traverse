@@ -1,10 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
 const Header = () => {
-   const navItems = ["Home", "About", "Contact"];
+   const navItems = [
+      { label: "Home", path: "/" },
+      { label: "About", path: "/about" },
+      { label: "Contact", path: "/contact" },
+   ];
 
    return (
       <AppBar position="static">
@@ -14,13 +19,13 @@ const Header = () => {
             </Typography>
             <div className="flex ml-auto sm:hidden">
                {navItems.map((item) => (
-                  <Typography
-                     key={item}
-                     variant="h6"
+                  <Link
+                     key={item.label}
+                     to={item.path}
                      className="text-black px-2 hover:underline cursor-pointer"
                   >
-                     {item}
-                  </Typography>
+                     <Typography variant="h6">{item.label}</Typography>
+                  </Link>
                ))}
             </div>
          </Toolbar>
