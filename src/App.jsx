@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 
 function App() {
    return (
-      <BrowserRouter>
+      <BrowserRouter basename="/form-traverse">
          <Header />
          <Routes>
             <Route path="/" element={<Home />} />
