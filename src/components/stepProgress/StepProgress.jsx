@@ -3,6 +3,7 @@ import ServiceDetails from "./serviceDetails/ServiceDetails";
 import ContactInformation from "./contactInformation/ContactInformation";
 import ServiceAddress from "./serviceAddress/ServiceAddress";
 import CardDetails from "./cardDetails/CardDetails";
+import SaveQuote from "../SaveQuote";
 import Button from "../Button";
 
 const StepProgress = () => {
@@ -18,10 +19,6 @@ const StepProgress = () => {
       if (activeStep > 1) {
          setActiveStep(activeStep - 1);
       }
-   };
-
-   const handleSaveQuote = () => {
-      console.log("Save Quote");
    };
 
    const handleBookNow = () => {
@@ -63,12 +60,7 @@ const StepProgress = () => {
             )}
             {activeStep === 4 && (
                <div className="flex justify-end items-center w-full">
-                  <Button
-                     extraStyle="bg-blue-950 ml-4 text-white sm:ml-2"
-                     contained="Save Quote"
-                     disabled={activeStep !== 4}
-                     onClick={handleSaveQuote}
-                  />
+                  <SaveQuote />
                   <Button
                      extraStyle={"bg-green-700 ml-4 text-white sm:ml-2"}
                      contained="Book Now"
