@@ -3,7 +3,7 @@ import ServiceDetails from "./serviceDetails/ServiceDetails";
 import ContactInformation from "./contactInformation/ContactInformation";
 import ServiceAddress from "./serviceAddress/ServiceAddress";
 import CardDetails from "./cardDetails/CardDetails";
-import SaveQuote from "../SaveQuote";
+import SaveQuote from "./cardDetails/SaveQuote";
 import Button from "../Button";
 
 const StepProgress = () => {
