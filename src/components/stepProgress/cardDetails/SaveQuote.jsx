@@ -103,7 +103,7 @@ const SaveQuote = () => {
       yAxis += 10;
 
       // Service Details
-      doc.text("Service Details", 10, (yAxis += 10));
+      doc.text("Service Details", 10, yAxis);
       doc.text(selectedOptionData.label + selectedOptionData.price, 10, (yAxis += 10));
       doc.text(selectedBoxData.label + selectedBoxData.price, 10, (yAxis += 10));
       doc.text(selectedDateData + "," + selectedTimeData, 10, (yAxis += 10));
@@ -115,7 +115,6 @@ const SaveQuote = () => {
                option.price.toString() +
                (option.quantity ? ` x ${option.quantity.toString()}` : "");
             doc.text(optionText, 10, (yAxis += 10));
-            yAxis += 10;
          });
       }
       yAxis += 10;
