@@ -10,6 +10,7 @@ import {
    getSelectedTimingData,
    getServiceFrequencyData,
    getInfoFormData,
+   getServiceFormData,
 } from "../../../store/selectors/selectors";
 
 const SaveQuote = () => {
@@ -21,6 +22,7 @@ const SaveQuote = () => {
    const serviceFrequencyData = useSelector(getServiceFrequencyData);
 
    const infoFormData = useSelector(getInfoFormData);
+   const serviceFormData = useSelector(getServiceFormData);
 
    const handleSaveQuote = () => {
       const doc = new jsPDF();
@@ -60,7 +62,7 @@ const SaveQuote = () => {
       const infoKeys = Object.keys(infoFormData);
       const infoLines = infoKeys.length;
 
-      const newY = y + infoLines * 10 + 10;
+      let newY = y + infoLines * 10 + 10;
 
       infoKeys.forEach((key, index) => {
          let infoText = "";
@@ -82,6 +84,35 @@ const SaveQuote = () => {
 
       // last border line
       doc.line(10, newY, 10 + pageWidth - 20, newY);
+      newY += 10;
+
+      doc.text("Service Address", 10, newY);
+      console.log(serviceFormData);
+
+      const addressKeys = Object.keys(serviceFormData);
+      const addressLines = addressKeys.length;
+
+      addressKeys.forEach((key, index) => {
+         let addressText = "";
+         if (key === "streetAddress") {
+            addressText = `Street: ${serviceFormData.streetAddress}`;
+         } else if (key === "aptSuite") {
+            addressText = `Apt/Suite: ${serviceFormData.aptSuite}`;
+         } else if (key === "city") {
+            addressText = `City: ${serviceFormData.city}`;
+         } else if (key === "selectedOption") {
+            addressText = `State: ${serviceFormData.selectedOption}`;
+         } else if (key === "zip") {
+            addressText = `Zip: ${serviceFormData.zip}`;
+         } else if (key === "textarea") {
+            addressText = `Your Message: ${serviceFormData.textarea}`;
+         } else {
+            addressText = `${key}: ${serviceFormData[key]}`;
+         }
+
+         const addressY = newY + 10 + index * 10;
+         doc.text(addressText, 10, addressY);
+      });
 
       doc.save("save-quote.pdf");
    };
