@@ -9,6 +9,7 @@ import {
    getSelectedDateData,
    getSelectedTimingData,
    getServiceFrequencyData,
+   getInfoFormData,
 } from "../../../store/selectors/selectors";
 
 const SaveQuote = () => {
@@ -18,6 +19,8 @@ const SaveQuote = () => {
    const selectedDateData = useSelector(getSelectedDateData);
    const selectedTimeData = useSelector(getSelectedTimingData);
    const serviceFrequencyData = useSelector(getServiceFrequencyData);
+
+   const infoFormData = useSelector(getInfoFormData);
 
    const handleSaveQuote = () => {
       const doc = new jsPDF();
@@ -50,6 +53,35 @@ const SaveQuote = () => {
 
       // border line
       doc.line(10, y, 10 + pageWidth - 20, y);
+      y += 10;
+
+      doc.text("Contact Information", 10, y);
+
+      const infoKeys = Object.keys(infoFormData);
+      const infoLines = infoKeys.length;
+
+      const newY = y + infoLines * 10 + 10;
+
+      infoKeys.forEach((key, index) => {
+         let infoText = "";
+         if (key === "firstName" || key === "lastName") {
+            infoText = `Name: ${infoFormData.firstName} ${infoFormData.lastName}`;
+         } else if (key === "phoneNumber") {
+            infoText = `Phone No.: ${infoFormData.phoneNumber}`;
+         } else if (key === "email") {
+            infoText = `Email: ${infoFormData.email}`;
+         } else if (key === "textarea") {
+            infoText = `Your Message: ${infoFormData.textarea}`;
+         } else {
+            infoText = `${key}: ${infoFormData[key]}`;
+         }
+
+         const infoY = y + 10 + index * 10;
+         doc.text(infoText, 10, infoY);
+      });
+
+      // last border line
+      doc.line(10, newY, 10 + pageWidth - 20, newY);
 
       doc.save("save-quote.pdf");
    };
