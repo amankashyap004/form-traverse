@@ -31,12 +31,22 @@ const SaveQuote = () => {
 
       doc.setFontSize(fontSize);
 
-      doc.text("service Details", 10, 20);
+      doc.text("Service Details", 10, 20);
       doc.text(selectedOptionData.label + selectedOptionData.price, 10, 30);
       doc.text(selectedBoxData.label + selectedBoxData.price, 10, 40);
-      // console.log(selectedMultiOptions);
-      doc.text(selectedDateData + "," + selectedTimeData, 10, 60);
-      doc.text(serviceFrequencyData.label + serviceFrequencyData.offer, 10, 70);
+      doc.text(selectedDateData + "," + selectedTimeData, 10, 50);
+      doc.text(serviceFrequencyData.label, 10, 60);
+      if (selectedMultiOptions.length > 0) {
+         let y = 70;
+         selectedMultiOptions.forEach((option) => {
+            const optionText =
+               option.label.toString() +
+               option.price.toString() +
+               (option.quantity ? ` x ${option.quantity.toString()}` : "");
+            doc.text(optionText, 10, y);
+            y += 10;
+         });
+      }
 
       doc.save("save-quote.pdf");
    };
