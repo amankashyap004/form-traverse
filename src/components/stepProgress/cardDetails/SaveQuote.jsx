@@ -36,33 +36,14 @@ const SaveQuote = () => {
 
       doc.setFontSize(fontSize);
 
-      doc.text("Service Details", 10, 20);
-      doc.text(selectedOptionData.label + selectedOptionData.price, 10, 30);
-      doc.text(selectedBoxData.label + selectedBoxData.price, 10, 40);
-      doc.text(selectedDateData + "," + selectedTimeData, 10, 50);
-      doc.text(serviceFrequencyData.label, 10, 60);
-      let y = 70;
-      if (selectedMultiOptions.length > 0) {
-         selectedMultiOptions.forEach((option) => {
-            const optionText =
-               option.label.toString() +
-               option.price.toString() +
-               (option.quantity ? ` x ${option.quantity.toString()}` : "");
-            doc.text(optionText, 10, y);
-            y += 10;
-         });
-      }
+      let yAxis = 20;
 
-      // border line
-      doc.line(10, y, 10 + pageWidth - 20, y);
-      y += 10;
-
-      doc.text("Contact Information", 10, y);
+      // Contact Information
+      doc.text("Contact Information", 10, yAxis);
 
       const infoKeys = Object.keys(infoFormData);
       const infoLines = infoKeys.length;
-
-      let newY = y + infoLines * 10 + 10;
+      let yAxisInfo = yAxis + infoLines * 10 + 10;
 
       infoKeys.forEach((key, index) => {
          let infoText = "";
@@ -77,20 +58,22 @@ const SaveQuote = () => {
          } else {
             infoText = `${key}: ${infoFormData[key]}`;
          }
-
-         const infoY = y + 10 + index * 10;
+         const infoY = yAxis + 10 + index * 10;
          doc.text(infoText, 10, infoY);
       });
 
-      // last border line
-      doc.line(10, newY, 10 + pageWidth - 20, newY);
-      newY += 10;
+      yAxis += yAxisInfo - yAxis;
 
-      doc.text("Service Address", 10, newY);
-      console.log(serviceFormData);
+      // border line
+      doc.line(10, yAxis, 10 + pageWidth - 20, yAxis);
+      yAxis += 10;
+
+      // Service Address
+      doc.text("Service Address", 10, yAxis);
 
       const addressKeys = Object.keys(serviceFormData);
       const addressLines = addressKeys.length;
+      let yAxisAddress = yAxis + addressLines * 10 + 10;
 
       addressKeys.forEach((key, index) => {
          let addressText = "";
@@ -109,10 +92,33 @@ const SaveQuote = () => {
          } else {
             addressText = `${key}: ${serviceFormData[key]}`;
          }
-
-         const addressY = newY + 10 + index * 10;
+         const addressY = yAxis + 10 + index * 10;
          doc.text(addressText, 10, addressY);
       });
+
+      yAxis += yAxisAddress - yAxis;
+
+      // last border line
+      doc.line(10, yAxis, 10 + pageWidth - 20, yAxis);
+      yAxis += 10;
+
+      // Service Details
+      doc.text("Service Details", 10, (yAxis += 10));
+      doc.text(selectedOptionData.label + selectedOptionData.price, 10, (yAxis += 10));
+      doc.text(selectedBoxData.label + selectedBoxData.price, 10, (yAxis += 10));
+      doc.text(selectedDateData + "," + selectedTimeData, 10, (yAxis += 10));
+      doc.text(serviceFrequencyData.label, 10, (yAxis += 10));
+      if (selectedMultiOptions.length > 0) {
+         selectedMultiOptions.forEach((option) => {
+            const optionText =
+               option.label.toString() +
+               option.price.toString() +
+               (option.quantity ? ` x ${option.quantity.toString()}` : "");
+            doc.text(optionText, 10, (yAxis += 10));
+            yAxis += 10;
+         });
+      }
+      yAxis += 10;
 
       doc.save("save-quote.pdf");
    };
