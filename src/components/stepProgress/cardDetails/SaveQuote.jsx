@@ -36,8 +36,8 @@ const SaveQuote = () => {
       doc.text(selectedBoxData.label + selectedBoxData.price, 10, 40);
       doc.text(selectedDateData + "," + selectedTimeData, 10, 50);
       doc.text(serviceFrequencyData.label, 10, 60);
+      let y = 70;
       if (selectedMultiOptions.length > 0) {
-         let y = 70;
          selectedMultiOptions.forEach((option) => {
             const optionText =
                option.label.toString() +
@@ -47,6 +47,9 @@ const SaveQuote = () => {
             y += 10;
          });
       }
+
+      // border line
+      doc.line(10, y, 10 + pageWidth - 20, y);
 
       doc.save("save-quote.pdf");
    };
