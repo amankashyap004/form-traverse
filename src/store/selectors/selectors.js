@@ -2,6 +2,8 @@ export const getSelectedOptionData = (state) => state.selectedOptionData;
 
 export const getSelectedBoxData = (state) => state.selectedBoxData;
 
+export const getSelectedMultiOptions = (state) => state.selectedMultiOptions;
+
 export const getSelectedDateData = (state) => state.selectedDateData;
 
 export const getSelectedTimingData = (state) => state.selectedTimeData;

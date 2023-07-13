@@ -1,16 +1,22 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import Button from "../../Button";
-import { getSelectedOptionData, getSelectedBoxData } from "../../../store/selectors/selectors";
+import {
+   getSelectedOptionData,
+   getSelectedBoxData,
+   getSelectedMultiOptions,
+} from "../../../store/selectors/selectors";
 
 const SaveQuote = () => {
    const selectedOptionData = useSelector(getSelectedOptionData);
    const selectedBoxData = useSelector(getSelectedBoxData);
+   const selectedMultiOptions = useSelector(getSelectedMultiOptions);
 
    const handleSaveQuote = () => {
       console.log("Save Quote");
       console.log(selectedOptionData.label + selectedOptionData.price);
       console.log(selectedBoxData.label + selectedBoxData.price);
+      console.log(selectedMultiOptions);
    };
 
    return (
