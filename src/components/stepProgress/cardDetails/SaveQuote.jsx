@@ -27,19 +27,25 @@ const SaveQuote = () => {
    const handleSaveQuote = () => {
       const doc = new jsPDF();
 
+      doc.setFont("helvetica", "bold");
       const bookingSummary = "Booking Summary";
-      const fontSize = 12;
-      const { w: textWidth } = doc.getTextDimensions(bookingSummary, { fontSize });
+      const { w: textWidth } = doc.getTextDimensions(bookingSummary, 16);
       const pageWidth = doc.internal.pageSize.getWidth();
       const x = (pageWidth - textWidth) / 2;
       doc.text(bookingSummary, x, 10);
-
-      doc.setFontSize(fontSize);
+      doc.setFont("helvetica", "normal");
 
       let yAxis = 20;
+      doc.setDrawColor("#071952");
 
+      // border line
+      doc.line(10, yAxis, 10 + pageWidth - 20, yAxis);
+      yAxis += 10;
+
+      doc.setFontSize(14);
       // Contact Information
       doc.text("Contact Information", 10, yAxis);
+      doc.setFontSize(10);
 
       const infoKeys = Object.keys(infoFormData);
       const infoLines = infoKeys.length;
@@ -63,13 +69,19 @@ const SaveQuote = () => {
       });
 
       yAxis += yAxisInfo - yAxis;
+      yAxis = 30;
 
-      // border line
-      doc.line(10, yAxis, 10 + pageWidth - 20, yAxis);
-      yAxis += 10;
+      // doc.setLineWidth(0.1);
+      // doc.line(100, 30, 100, 90);
 
+      //  border line
+      // doc.line(10, yAxis, 10 + pageWidth - 20, yAxis);
+      // yAxis += 10;
+
+      doc.setFontSize(14);
       // Service Address
-      doc.text("Service Address", 10, yAxis);
+      doc.text("Service Address", 110, yAxis);
+      doc.setFontSize(10);
 
       const addressKeys = Object.keys(serviceFormData);
       const addressLines = addressKeys.length;
@@ -93,7 +105,7 @@ const SaveQuote = () => {
             addressText = `${key}: ${serviceFormData[key]}`;
          }
          const addressY = yAxis + 10 + index * 10;
-         doc.text(addressText, 10, addressY);
+         doc.text(addressText, 110, addressY);
       });
 
       yAxis += yAxisAddress - yAxis;
@@ -102,8 +114,11 @@ const SaveQuote = () => {
       doc.line(10, yAxis, 10 + pageWidth - 20, yAxis);
       yAxis += 10;
 
+      doc.setFontSize(14);
       // Service Details
       doc.text("Service Details", 10, yAxis);
+      doc.setFontSize(10);
+
       doc.text(selectedOptionData.label + selectedOptionData.price, 10, (yAxis += 10));
       doc.text(selectedBoxData.label + selectedBoxData.price, 10, (yAxis += 10));
       doc.text(selectedDateData + "," + selectedTimeData, 10, (yAxis += 10));
