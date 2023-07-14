@@ -112,7 +112,7 @@ const SaveQuote = () => {
 
       yAxis += yAxisAddress - yAxis;
 
-      // last border line
+      // border line
       doc.line(10, yAxis, 10 + pageWidth - 20, yAxis);
       yAxis += 10;
 
@@ -135,6 +135,16 @@ const SaveQuote = () => {
          });
       }
       yAxis += 10;
+
+      // border line
+      doc.line(10, yAxis, 10 + pageWidth - 20, yAxis);
+      yAxis += 10;
+
+      // Total Prices
+      doc.setFont("helvetica", "bold");
+      doc.text(`Total Price: ${totalPrices[0]}`, 10, yAxis);
+      doc.text(`Price After 1st Clean: ${totalPrices[1]}`, 10, (yAxis += 10));
+      doc.setFont("helvetica", "normal");
 
       doc.save("save-quote.pdf");
    };
