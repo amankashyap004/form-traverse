@@ -11,6 +11,7 @@ import {
    getServiceFrequencyData,
    getInfoFormData,
    getServiceFormData,
+   getTotalPrices,
 } from "../../../store/selectors/selectors";
 
 const SaveQuote = () => {
@@ -20,6 +21,7 @@ const SaveQuote = () => {
    const selectedDateData = useSelector(getSelectedDateData);
    const selectedTimeData = useSelector(getSelectedTimingData);
    const serviceFrequencyData = useSelector(getServiceFrequencyData);
+   const totalPrices = useSelector(getTotalPrices);
 
    const infoFormData = useSelector(getInfoFormData);
    const serviceFormData = useSelector(getServiceFormData);

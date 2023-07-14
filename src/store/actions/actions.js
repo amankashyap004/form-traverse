@@ -60,3 +60,10 @@ export const setCardInfoData = (cardInfoData) => {
       payload: cardInfoData,
    };
 };
+
+export const updateTotalPrices = (totalPrices) => {
+   return {
+      type: "UPDATE_TOTAL_PRICES",
+      totalPrices: totalPrices,
+   };
+};

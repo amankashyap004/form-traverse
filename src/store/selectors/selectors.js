@@ -15,3 +15,5 @@ export const getInfoFormData = (state) => state.infoFormData;
 export const getServiceFormData = (state) => state.serviceFormData;
 
 export const getCardInfoData = (state) => state.cardInfoData;
+
+export const getTotalPrices = (state) => state.totalPrices;

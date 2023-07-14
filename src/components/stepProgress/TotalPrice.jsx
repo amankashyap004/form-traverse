@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { updateTotalPrices } from "../../store/actions/actions";
 import {
    getSelectedOptionData,
    getSelectedBoxData,
@@ -7,6 +8,8 @@ import {
 } from "../../store/selectors/selectors";
 
 const TotalPrice = ({ totalPriceOfSelectedMultiOptions }) => {
+   const dispatch = useDispatch();
+
    const selectedOptionData = useSelector(getSelectedOptionData);
    const selectedOptionDataPrice = selectedOptionData.price;
    const [parsedSelectedOptionPrice, setParsedSelectedOptionPrice] = useState(0);
@@ -59,6 +62,19 @@ const TotalPrice = ({ totalPriceOfSelectedMultiOptions }) => {
          return Math.round(total);
       }
    };
+
+   useEffect(() => {
+      const total = totalPrice();
+      const calculatedTotal = calculateTotalPrice();
+      const totalPrices = [total, calculatedTotal];
+
+      dispatch(updateTotalPrices(totalPrices));
+   }, [
+      selectedOptionDataPrice,
+      selectedBoxPrice,
+      totalPriceOfSelectedMultiOptions,
+      serviceFrequencyOffer,
+   ]);
 
    return (
       <div className="flex justify-between items-center flex-col py-4 border-t border-slate-400 bottom-1 w-full">

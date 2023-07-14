@@ -8,6 +8,7 @@ const initialState = {
    infoFormData: [],
    serviceFormData: [],
    cardInfoData: [],
+   totalPrices: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -56,6 +57,11 @@ const reducer = (state = initialState, action) => {
          return {
             ...state,
             cardInfoData: action.payload,
+         };
+      case "UPDATE_TOTAL_PRICES":
+         return {
+            ...state,
+            totalPrices: action.totalPrices,
          };
       default:
          return state;
