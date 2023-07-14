@@ -29,11 +29,11 @@ const SaveQuote = () => {
    const handleSaveQuote = () => {
       const doc = new jsPDF();
 
-      doc.setFont("helvetica", "bold");
       const bookingSummary = "Booking Summary";
       const { w: textWidth } = doc.getTextDimensions(bookingSummary, 16);
       const pageWidth = doc.internal.pageSize.getWidth();
       const x = (pageWidth - textWidth) / 2;
+      doc.setFont("helvetica", "bold");
       doc.text(bookingSummary, x, 10);
       doc.setFont("helvetica", "normal");
 
@@ -44,8 +44,8 @@ const SaveQuote = () => {
       doc.line(10, yAxis, 10 + pageWidth - 20, yAxis);
       yAxis += 10;
 
-      doc.setFontSize(14);
       // Contact Information
+      doc.setFontSize(14);
       doc.text("Contact Information", 10, yAxis);
       doc.setFontSize(10);
 
@@ -80,8 +80,8 @@ const SaveQuote = () => {
       // doc.line(10, yAxis, 10 + pageWidth - 20, yAxis);
       // yAxis += 10;
 
-      doc.setFontSize(14);
       // Service Address
+      doc.setFontSize(14);
       doc.text("Service Address", 110, yAxis);
       doc.setFontSize(10);
 
@@ -116,8 +116,8 @@ const SaveQuote = () => {
       doc.line(10, yAxis, 10 + pageWidth - 20, yAxis);
       yAxis += 10;
 
-      doc.setFontSize(14);
       // Service Details
+      doc.setFontSize(14);
       doc.text("Service Details", 10, yAxis);
       doc.setFontSize(10);
 
